@@ -74,7 +74,7 @@ export default function OrthopedicCareSection() {
                             <img
                                 src={card.image}
                                 alt={card.title}
-                                className="absolute inset-0 w-full h-full object-cover object-center"
+                                className="absolute inset-0 w-full h-full object-cover object-left"
                             />
 
                             {/* GRADIENT OVERLAY (SOFT WHITE FADE AT BOTTOM/SIDE) */}
