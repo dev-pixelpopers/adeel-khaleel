@@ -27,18 +27,6 @@ const servicesData = [
 //     description: "Targeted physical therapy and interventional pain management.",
 //     image: "/service-4.png",
 //   },
-//   {
-//     id: "05",
-//     title: "PATIENT-CENTERED CONSULTATION",
-//     description: "Detailed evaluations ensuring personalized treatment plans.",
-//     image: "/service-5.png",
-//   },
-//   {
-//     id: "06",
-//     title: "STATE-OF-THE-ART RECOVERY",
-//     description: "Post-surgery care designed for long-term health and mobility.",
-//     image: "/service-6.png",
-//   },
 ];
 
 export default function Services() {
@@ -48,7 +36,10 @@ export default function Services() {
         {servicesData.map((item, index) => (
           <div
             key={index}
-            className="relative w-full min-h-[480px] bg-[#F9F8F6] rounded-xl flex flex-col lg:flex-row items-center justify-between pl-[140px] py-[0px] pr-[140px]"
+            className="relative w-full min-h-[480px] rounded-xl flex flex-col lg:flex-row items-center justify-between pl-[140px] py-[0px] pr-[140px]"
+          style={{
+    background: "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)"
+  }}
           >
             {/* LEFT TEXT CONTENT */}
             <div className="w-full lg:w-1/2 pb-[100px] mt-[-81px] flex flex-col justify-center pr-0 lg:pr-8 z-10 space-y-4">

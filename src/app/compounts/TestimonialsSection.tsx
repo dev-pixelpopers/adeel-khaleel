@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
   key={item.id}
   className={`absolute w-[320px] xl:w-[350px] h-[350px] p-6 rounded-2xl shadow-sm border border-[#EBE3C8] transition-transform ${item.positionClass}`}
   style={{
-    background: "linear-gradient(180deg, #e2c875 0%, rgba(255, 255, 255) 101.88%)"
+    background: "linear-gradient(180deg, #e9d9a6 0%, rgba(255, 255, 255) 101.88%)"
   }}
 >
               {/* Review Text */}

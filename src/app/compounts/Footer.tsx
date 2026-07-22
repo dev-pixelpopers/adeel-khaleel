@@ -2,13 +2,6 @@
 import React, { useState } from "react";
 
 export default function Footer() {
-    const [email, setEmail] = useState("");
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Subscribe logic here
-        console.log("Subscribed:", email);
-    };
 
     return (
         <footer className="w-full bg-[url('/footer-bg.png')] bg-cover bg-center bg-no-repeat text-white pt-16 pb-6 px-6 sm:px-12 lg:px-20 relative select-none">
@@ -77,12 +70,10 @@ export default function Footer() {
 
                     {/* Newsletter Subscription */}
                     <div className="w-full max-w-[91%]">
-                        <form onSubmit={handleSubscribe} className="relative border-b border-white/40 pb-2 flex items-center justify-between">
+                        <form className="relative border-b border-white/40 pb-2 flex items-center justify-between">
                             <input
                                 type="email"
                                 required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Subscribe email list"
                                 className="bg-transparent text-white placeholder-white/90 font-Matangi-Regular text-[18px] outline-none w-full pr-12"
                             />
