@@ -54,13 +54,13 @@ export default function TestimonialsSection() {
 
         <div className="hidden lg:block absolute inset-0 z-10 ">
           {testimonials.map((item) => (
-        <div
-  key={item.id}
-  className={`absolute w-[320px] xl:w-[350px] h-[350px] p-6 rounded-2xl shadow-sm border border-[#EBE3C8] transition-transform ${item.positionClass}`}
-  style={{
-    background: "linear-gradient(180deg, #e9d9a6 0%, rgba(255, 255, 255) 101.88%)"
-  }}
->
+            <div
+              key={item.id}
+              className={`absolute w-[320px] xl:w-[350px] h-[350px] p-6 rounded-2xl shadow-sm border border-[#EBE3C8] transition-transform ${item.positionClass}`}
+              style={{
+                background: "linear-gradient(180deg, #e9d9a6 0%, rgba(255, 255, 255) 101.88%)"
+              }}
+            >
               <p className="text-[#404040] font-Matangi-Regular text-[12px] leading-relaxed mb-[120px]">
                 {item.text}
               </p>
@@ -84,7 +84,6 @@ export default function TestimonialsSection() {
               <div className="flex items-center gap-3">
                 <img
                   src={item.avatar}
-                  alt={item.name}
                   className="w-10 h-10 rounded-full object-cover border border-[#DCD3B2]"
                 />
                 <div>
@@ -100,7 +99,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 z-10 mt-10 w-full px-4">
+        {/* <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 z-10 mt-10 w-full px-4">
           {testimonials.map((item) => (
             <div
               key={item.id}
@@ -141,8 +140,7 @@ export default function TestimonialsSection() {
               </div>
             </div>
           ))}
-        </div>
-
+        </div> */}
       </div>
     </section>
   );

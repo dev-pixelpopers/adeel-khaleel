@@ -36,29 +36,22 @@ export default function Services() {
           <div
             key={index}
             className="relative w-full min-h-[480px] rounded-xl flex flex-col lg:flex-row items-center justify-between pl-[140px] py-[0px] pr-[140px]"
-          style={{
-    background: "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)"
-  }}
+            style={{
+              background: "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)"
+            }}
           >
-
             <div className="w-full lg:w-1/2 pb-[100px] mt-[-81px] flex flex-col justify-center pr-0 lg:pr-8 z-10 space-y-4">
-              {/* Big Card Number */}
+
               <span className="text-[200px] font-Adorage text-[#54545420] leading-none">
                 {item.id}
               </span>
-
-              {/* Title */}
               <h3 className="text-[60px] font-Adorage uppercase text-[#545454] leading-tight">
                 {item.title}
               </h3>
-
-              {/* Subtitle / Description */}
               <p className="text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2">
                 {item.description}
               </p>
             </div>
-
-  
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center mt-8 lg:mt-0 relative z-10">
               <div className="absolute w-full max-w-[702px] h-[780px] transform rotate-7">
                 <img
@@ -68,7 +61,7 @@ export default function Services() {
               </div>
             </div>
 
-    </div>
+          </div>
         ))}
       </div>
     </section>

@@ -16,7 +16,6 @@ export default function Header() {
       <div className="max-w-[1680px] mx-auto flex items-center justify-between">
         
         <a href="#" className="flex items-center gap-3 shrink-0">
-
           <div className="w-12 h-12 sm:w-[400px] sm:h-[100px] items-center justify-center p-2 ">
             <img
               src="/logo.png"
@@ -45,58 +44,8 @@ export default function Header() {
           >
             Book Your Appointments
           </a>
-        </div>
-
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-white p-2 focus:outline-none"
-          aria-label="Toggle Menu"
-        >
-          <svg
-            className="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {mobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
+        </div>  
       </div>
-
-      {/* MOBILE DROPDOWN MENU */}
-      {/* {mobileMenuOpen && (
-        <div className="lg:hidden mt-4 bg-[#7A6430]/95 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 shadow-xl">
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              className="bg-white text-[#3A3A3A] font-Matangi-Regular text-[15px] font-medium px-5 py-2.5 rounded-full text-center"
-            >
-              {item.name}
-            </a>
-          ))}
-          <a
-            href="#appointment"
-            className="border-2 border-white bg-[#5C4B23] text-white font-Matangi-Regular text-[15px] font-medium px-5 py-2.5 rounded-full text-center mt-2"
-          >
-            Book Your Appointments
-          </a>
-        </div>
-      )} */}
     </header>
   );
 }
