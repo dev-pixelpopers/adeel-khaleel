@@ -6,10 +6,8 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[url('/footer-bg.png')] bg-cover bg-center bg-no-repeat text-white pt-16 pb-6 px-6 sm:px-12 lg:px-20 relative select-none">
 
-            {/* MAIN FOOTER CONTENT GRID */}
             <div className="max-w-[1680px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 border-b border-white/20 pb-12">
 
-                {/* COLUMN 1: MENU */}
                 <div className="lg:col-span-3 lg:pr-8 flex flex-col justify-start">
                     <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-6">
                         Menu
@@ -30,7 +28,7 @@ export default function Footer() {
                 {/* COLUMN 2: SOCIAL MEDIA & CONTACT (WITH LEFT VERTICAL DIVIDER) */}
                 <div className="lg:col-span-4 lg:px-10 lg:border-l border-white/20 flex flex-col space-y-10 lg:space-y-20">
 
-                    {/* Social Media Links */}
+
                     <div>
                         <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-6">
                             Social Media
@@ -42,7 +40,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
+
                     <div>
                         <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-4">
                             Contact
@@ -55,10 +53,9 @@ export default function Footer() {
 
                 </div>
 
-                {/* COLUMN 3: ABOUT, NEWSLETTER & PARTNERS (WITH LEFT VERTICAL DIVIDER) */}
                 <div className="lg:col-span-5 lg:pl-10 lg:border-l border-white/20 flex flex-col space-y-35">
 
-                    {/* Top Info Text */}
+
                     <div>
                         <h3 className="font-Adorage text-[28px] sm:text-[32px] tracking-wide mb-4">
                             Social Media
@@ -68,7 +65,6 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Newsletter Subscription */}
                     <div className="w-full max-w-[91%]">
                         <form className="relative border-b border-white/40 pb-2 flex items-center justify-between">
                             <input
@@ -98,29 +94,24 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Partner / Accreditation Logos */}
+
                     <div className="flex flex-wrap items-center gap-3 pt-2">
-                        {/* APEX ORTHOPEDICS */}
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (5).png" alt="American Academy of Orthopaedic Surgeons" className="w-full h-full object-cover" />
                         </div>
-
-                        {/* NASS */}
+   
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (2).png" alt="NASS" className="w-full h-full object-cover" />
                         </div>
 
-                        {/* North American Spine Society */}
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (3).png" alt="North American Spine Society" className="w-full h-full object-cover" />
                         </div>
 
-                        {/* AAOS */}
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (4).png" alt="AAOS" className="w-full h-full object-cover" />
                         </div>
 
-                        {/* American Academy of Orthopaedic Surgeons */}
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (1).png" alt="Apex Orthopedics" className="w h-full object-cover" />
                         </div>
@@ -130,7 +121,6 @@ export default function Footer() {
 
             </div>
 
-            {/* BOTTOM COPYRIGHT BAR */}
             <div className="max-w-[1440px] mx-auto pt-6 text-center">
                 <p className="text-[14px] font-Matangi-Regular text-white/80">
                     © 2026, Mohammed Khaleel, MD. All Rights Reserved.

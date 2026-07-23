@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-// Testimonials Data
 const testimonials = [
   {
     id: 1,
@@ -9,8 +8,7 @@ const testimonials = [
     rating: 5,
     name: "Harold J. Souza",
     role: "Spine Patient",
-    avatar: "/review-1.png", // Replace with your image path
-    // Desktop positioning
+    avatar: "/review-1.png", 
     positionClass: "top-[52px] left-[40.5%]",
   },
   {
@@ -47,14 +45,13 @@ export default function TestimonialsSection() {
     <section className="w-full bg-white py-20 pb-[250px] overflow-hidden relative select-none">
       <div className="max-w-[1600px] mx-auto min-h-[100vh] relative flex flex-col justify-center items-center">
         
-        {/* GIANT BACKGROUND TYPOGRAPHY */}
+
         <div className="w-full text-center flex flex-col items-center justify-center text-[#4A4A4A] font-Adorage uppercase z-0 pointer-events-none">
           <h2 className="text-[120px] sm:text-[180px] md:text-[230px] lg:text-[270px] leading-[300px] font-normal">
             WHAT THEY  ARE SAYING
           </h2>
         </div>
 
-        {/* FLOATING REVIEW CARDS (DESKTOP / LARGE SCREENS) */}
         <div className="hidden lg:block absolute inset-0 z-10 ">
           {testimonials.map((item) => (
         <div
@@ -64,12 +61,11 @@ export default function TestimonialsSection() {
     background: "linear-gradient(180deg, #e9d9a6 0%, rgba(255, 255, 255) 101.88%)"
   }}
 >
-              {/* Review Text */}
               <p className="text-[#404040] font-Matangi-Regular text-[12px] leading-relaxed mb-[120px]">
                 {item.text}
               </p>
 
-              {/* Star Rating */}
+
               <div className="flex gap-1 mb-3 text-[#0F282F]">
                 {[...Array(item.rating)].map((_, i) => (
                   <svg
@@ -84,7 +80,7 @@ export default function TestimonialsSection() {
                 ))}
               </div>
 
-              {/* User Details */}
+  
               <div className="flex items-center gap-3">
                 <img
                   src={item.avatar}
@@ -104,7 +100,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* MOBILE & TABLET LAYOUT (GRID VIEW FOR RESPONSIVENESS) */}
         <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 z-10 mt-10 w-full px-4">
           {testimonials.map((item) => (
             <div

@@ -9,22 +9,25 @@ export default function ReclaimLifeSection() {
     >
       <div className="mx-auto flex flex-col items-center justify-center pt-[150px] z-10">
         
-        {/* MAIN HEADING */}
         <h2 className="text-white font-Adorage uppercase text-[42px] sm:text-[60px] md:text-[80px] lg:text-[130px] font-normal leading-[1.05] drop-shadow-[0_4px_0px_#00000066]">
           RECLAIM YOUR LIFE WITH <br className="hidden sm:block" /> ADVANCED SPINE SURGERY
         </h2>
 
-        {/* SUBTITLE PARAGRAPH */}
         <p className="mt-6 md:mt-8 text-white/95 font-Matangi-Medium text-lg sm:text-2xl md:text-[40px] font-normal leading-relaxed">
           Providing Patients With Compassionate, Specialized <br className="hidden md:block" />
           Treatments for Optimal Recovery & Long-term Health
         </p>
 
-        {/* BOOK APPOINTMENT BUTTON */}
         <div className="mt-10 md:mt-18">
-          <button className="px-8 py-3.5 md:px-15 md:py-5 rounded-full bg-[#8C6D3B] border-2 border-white/90 text-white font-sans text-base md:text-[25px] font-medium tracking-wide shadow-lg">
-            Book Your Appointment
-          </button>
+         <a 
+  href="#appointment" 
+  target="" 
+  rel="noopener noreferrer"
+>
+  <button className="px-8 py-3.5 md:px-15 md:py-5 rounded-full bg-[#8C6D3B] border-2 border-white/90 text-white font-sans text-base md:text-[25px] font-medium tracking-wide shadow-lg cursor-pointer">
+    Book Your Appointment
+  </button>
+</a>
         </div>
 
       </div>

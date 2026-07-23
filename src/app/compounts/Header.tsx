@@ -15,9 +15,8 @@ export default function Header() {
     <header className="absolute top-0 left-0 w-full z-50 px-6 sm:px-12 lg:px-16 py-6 transition-all">
       <div className="max-w-[1680px] mx-auto flex items-center justify-between">
         
-        {/* LOGO SECTION */}
         <a href="#" className="flex items-center gap-3 shrink-0">
-          {/* Spine Logo Icon Container */}
+
           <div className="w-12 h-12 sm:w-[400px] sm:h-[100px] items-center justify-center p-2 ">
             <img
               src="/logo.png"
@@ -25,19 +24,8 @@ export default function Header() {
               className="w-full h-full object-contain"
             />
           </div>
-
-          {/* Text Brand Name */}
-          {/* <div className="flex flex-col text-white select-none">
-            <span className="font-Adorage text-[18px] sm:text-[22px] tracking-wide leading-tight uppercase">
-              Mohammed Khaleel MD
-            </span>
-            <span className="font-Matangi-Regular text-[10px] sm:text-[11px] tracking-[0.25em] text-white/90 uppercase -mt-0.5">
-              Spine Surgeon
-            </span>
-          </div> */}
         </a>
 
-        {/* DESKTOP NAVIGATION PILLS (CENTER) */}
         <nav className="hidden lg:flex items-center gap-3">
           {navItems.map((item, index) => (
             <a
@@ -50,7 +38,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA BUTTON (RIGHT) */}
         <div className="hidden lg:block">
           <a
             href="#appointment"
@@ -60,7 +47,6 @@ export default function Header() {
           </a>
         </div>
 
-        {/* MOBILE MENU TOGGLE BUTTON */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden text-white p-2 focus:outline-none"
@@ -92,7 +78,7 @@ export default function Header() {
       </div>
 
       {/* MOBILE DROPDOWN MENU */}
-      {mobileMenuOpen && (
+      {/* {mobileMenuOpen && (
         <div className="lg:hidden mt-4 bg-[#7A6430]/95 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex flex-col gap-4 shadow-xl">
           {navItems.map((item, index) => (
             <a
@@ -110,7 +96,7 @@ export default function Header() {
             Book Your Appointments
           </a>
         </div>
-      )}
+      )} */}
     </header>
   );
 }

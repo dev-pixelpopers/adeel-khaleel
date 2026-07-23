@@ -10,7 +10,7 @@ export default function Banner() {
       
       <div className="relative w-full min-h-[720px] flex items-center justify-center">
         
-        <div className="absolute inset-0 flex flex-col justify-center z-0 pointer-events-none pt-[120px]">
+        <div className="absolute inset-0 flex flex-col justify-center z-0 pt-[120px]">
           <h1 className="text-white text-[300px] font-Adorage font-normal leading-[180px] text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]">
             MUHAMMAD
           </h1>

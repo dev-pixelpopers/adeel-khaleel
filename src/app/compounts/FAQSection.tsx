@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-// FAQ Data
 const faqData = [
   {
     question: "When is the Date of Surgery?",
@@ -42,7 +41,7 @@ export default function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Border Gradient Style Definition
+
   const gradientBorderStyle = {
     borderImage: "linear-gradient(90deg, #8F7A3500 10%, #FFE9A1 50%, #8F7A3500 100%) 1",
   };
@@ -50,16 +49,14 @@ export default function FAQSection() {
   return (
     <section
       className="relative w-full min-h-[700px] bg-cover bg-center bg-no-repeat py-18 px-10 md:px-16 lg:px-35 select-none flex flex-col items-center justify-center"
-      style={{ backgroundImage: "url('/reclaimlife-bg.png')" }} // Background image path
+      style={{ backgroundImage: "url('/reclaimlife-bg.png')" }} 
     >
       <div className="w-full mx-auto flex flex-col items-center">
-        
-        {/* SECTION TITLE */}
+
         <h2 className="text-white font-Adorage uppercase text-[36px] sm:text-[50px] md:text-[82px] font-normal tracking-wide text-center leading-tight mb-12 drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
           HAVE QUESTIONS, WE HAVE ANSWERS
         </h2>
 
-        {/* ACCORDION CONTAINER */}
         <div className="w-full space-y-5">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -70,7 +67,6 @@ export default function FAQSection() {
                 className="w-full transition-colors duration-200 border-b"
                 style={gradientBorderStyle}
               >
-                {/* QUESTION BUTTON */}
                 <button
                   onClick={() => toggleAccordion(index)}
                   className="w-full flex items-center justify-between py-6 text-left focus:outline-none group cursor-pointer"
@@ -79,7 +75,6 @@ export default function FAQSection() {
                     {faq.question}
                   </span>
 
-                  {/* INLINE SVG CHEVRON ICON */}
                         <svg
                             className={`w-10 h-10 text-white transition-transform duration-300 ease-in-out shrink-0 ${isOpen ? "rotate-180" : "rotate-0"
                                 }`}
@@ -89,7 +84,6 @@ export default function FAQSection() {
 
                 </button>
 
-                {/* ANSWER CONTENT */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${
                     isOpen
