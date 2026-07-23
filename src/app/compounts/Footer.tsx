@@ -6,10 +6,10 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[url('/footer-bg.png')] bg-cover bg-center bg-no-repeat text-white pt-16 pb-6 px-6 sm:px-12 lg:px-20 relative select-none">
 
-            <div className="max-w-[1680px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 border-b border-white/20 pb-12">
+            <div className="max-w-[1680px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 border-b border-white/10 pb-12">
 
                 <div className="lg:col-span-3 lg:pr-8 flex flex-col justify-start">
-                    <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-6">
+                    <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-6">
                         Menu
                     </h3>
                     <ul className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
@@ -25,12 +25,11 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* COLUMN 2: SOCIAL MEDIA & CONTACT (WITH LEFT VERTICAL DIVIDER) */}
                 <div className="lg:col-span-4 lg:px-10 lg:border-l border-white/20 flex flex-col space-y-10 lg:space-y-20">
 
 
                     <div>
-                        <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-6">
+                        <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-6">
                             Social Media
                         </h3>
                         <ul className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
@@ -42,7 +41,7 @@ export default function Footer() {
 
 
                     <div>
-                        <h3 className="font-Adorage text-[28px] sm:text-[35px] tracking-wide mb-4">
+                        <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-4">
                             Contact
                         </h3>
                         <div className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
@@ -53,11 +52,11 @@ export default function Footer() {
 
                 </div>
 
-                <div className="lg:col-span-5 lg:pl-10 lg:border-l border-white/20 flex flex-col space-y-35">
+                <div className="lg:col-span-5 lg:pl-10 lg:border-l border-white/20 flex flex-col space-y-3">
 
 
                     <div>
-                        <h3 className="font-Adorage text-[28px] sm:text-[32px] tracking-wide mb-4">
+                        <h3 className="font-Adorage text-[28px] sm:text-[32px] mb-4">
                             Social Media
                         </h3>
                         <p className="font-Matangi-Regular text-[14px] sm:text-[18px] leading-relaxed text-white/85 max-w-[91%]">
@@ -65,7 +64,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="w-full max-w-[91%]">
+                    <div className="w-full max-w-[91%] mt-25 mb-18">
                         <form className="relative border-b border-white/40 pb-2 flex items-center justify-between">
                             <input
                                 type="email"

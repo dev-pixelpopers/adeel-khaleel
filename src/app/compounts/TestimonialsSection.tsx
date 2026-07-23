@@ -98,8 +98,8 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-
-        {/* <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 z-10 mt-10 w-full px-4">
+{/* 
+        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 z-10 mt-10 w-full px-4">
           {testimonials.map((item) => (
             <div
               key={item.id}
