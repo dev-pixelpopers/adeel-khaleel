@@ -12,9 +12,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 px-6 sm:px-12 lg:px-16 py-6 transition-all">
+    <header className="fixed top-0 left-0 w-full z-50 px-6 sm:px-12 lg:px-16 py-6 header opacity-0">
       <div className="max-w-[1680px] mx-auto flex items-center justify-between">
-        
+
         <a href="#" className="flex items-center gap-3 shrink-0">
           <div className="w-12 h-12 sm:w-[400px] sm:h-[100px] items-center justify-center p-2 ">
             <img
@@ -44,7 +44,7 @@ export default function Header() {
           >
             Book Your Appointments
           </a>
-        </div>  
+        </div>
       </div>
     </header>
   );

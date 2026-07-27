@@ -1,5 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const conditionsData = [
     {
@@ -35,11 +40,55 @@ const conditionsData = [
 export default function OrthopedicCareSection() {
     const [activeId, setActiveId] = useState<number | null>(null);
 
+    const sectionRef = useRef<HTMLElement>(null);
+    const headingRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLParagraphElement>(null);
+
+    useGSAP(
+        () => {
+            gsap.set(headingRef.current, {
+                xPercent: 20,
+                opacity: 0,
+            });
+
+            gsap.set(textRef.current, {
+                xPercent: -20,
+                opacity: 0,
+            });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 65%",
+                    end: "+=350",
+                    scrub: 1,
+                },
+            });
+
+            tl.to(headingRef.current, {
+                xPercent: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+            }).to(
+                textRef.current,
+                {
+                    xPercent: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                },
+                "<"
+            );
+        },
+        { scope: sectionRef }
+    );
+
     return (
-        <section className="w-full bg-white pb-30 pt-30 px-6 md:px-12 select-none">
+        <section ref={sectionRef} className="w-full bg-white pb-30 pt-30 px-6 md:px-12 select-none overflow-x-hidden">
 
             <div className="w-full text-center mb-55 flex flex-col items-center justify-center">
-                <div className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">
+                <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">
                     <h2 className="text-[36px] sm:text-[55px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
                         ORTHOPEDIC CARE FOR
                     </h2>
@@ -48,10 +97,11 @@ export default function OrthopedicCareSection() {
                     </h3>
                 </div>
 
-                <p className="w-[85%] md:w-[73%] mt-8 md:mt-7 text-[18px] sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
+                <p ref={textRef} className="w-[85%] md:w-[73%] mt-8 md:mt-7 text-[18px] sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
                     At Mohammed Khaleel, MD, we specialize in comprehensive care for a range of conditions affecting the neck and spine. Our expert team is dedicated to providing effective orthopedic treatments tailored to your needs. Explore our services below.
                 </p>
             </div>
+
 
             <div className="mx-auto flex flex-col lg:flex-row gap-8 h-[550px] rounded-[8px] lg:h-[720px] w-full justify-center">
                 {conditionsData.map((card) => {
