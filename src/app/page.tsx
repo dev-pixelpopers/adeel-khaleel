@@ -2,14 +2,14 @@ import Image from "next/image";
 import Preloader from "./compounts/Preloader";
 import Banner from "./compounts/banner";
 import AdvancedSpineSection from "./compounts/advancedspinesection";
-import Services from "./compounts/services";
-import ReclaimLifeSection from "./compounts/ReclaimLifeSection";
+import ServicesAndReclaimSection from "./compounts/ServicesAndReclaimSection";
 import FAQSection from "./compounts/FAQSection";
 import OrthopedicCareSection from "./compounts/OrthopedicCareSection";
 import TestimonialsSection from "./compounts/TestimonialsSection";
 import Footer from "./compounts/Footer";
 import Header from "./compounts/Header";
 import VideoBanner from "./compounts/VideoBanner";
+import Services from "./compounts/services";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         {/* <AdvancedSpineSection /> */}
       </div>
       <Services />
-      {/* <ReclaimLifeSection /> */}
+      {/* <ServicesAndReclaimSection /> */}
       <OrthopedicCareSection />
       <FAQSection />
       <TestimonialsSection />

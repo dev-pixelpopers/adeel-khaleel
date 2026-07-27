@@ -79,14 +79,14 @@ const testimonials = [
     role: "Deformity Patient",
     avatar: "/review-1.png",
   },
-  {
-    id: 10,
-    text: "Prompt trauma care saved my mobility. I cannot thank Dr. Khaleel and the team enough for their incredible dedication.",
-    rating: 5,
-    name: "William E. Taylor",
-    role: "Spine Trauma Patient",
-    avatar: "/review-1.png",
-  },
+  // {
+  //   id: 10,
+  //   text: "Prompt trauma care saved my mobility. I cannot thank Dr. Khaleel and the team enough for their incredible dedication.",
+  //   rating: 5,
+  //   name: "William E. Taylor",
+  //   role: "Spine Trauma Patient",
+  //   avatar: "/review-1.png",
+  // },
 ];
 
 export default function TestimonialsSection() {
@@ -220,4 +220,4 @@ export default function TestimonialsSection() {
 
 
 
-
+

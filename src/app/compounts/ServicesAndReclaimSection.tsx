@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import ReclaimLifeSection from "./ReclaimLifeSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,14 +33,19 @@ const servicesData = [
   },
 ];
 
-export default function Services() {
+export default function ServicesAndReclaimSection() {
   const outerContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const numbersWrapperRef = useRef<HTMLDivElement>(null);
   const titlesWrapperRef = useRef<HTMLDivElement>(null);
   const descriptionsWrapperRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  // ReclaimLifeSection refs
   const reclaimWrapperRef = useRef<HTMLDivElement>(null);
+  const reclaimHeadingRef = useRef<HTMLHeadingElement>(null);
+  const reclaimTextRef = useRef<HTMLParagraphElement>(null);
+  const reclaimButtonRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -53,44 +57,37 @@ export default function Services() {
       )
         return;
 
-      // Set initial peek position for ReclaimLifeSection (top header peeking up from bottom)
+      // 1. Initial peek position for ReclaimLifeSection (top bar peeking at bottom)
       if (reclaimWrapperRef.current) {
         gsap.set(reclaimWrapperRef.current, {
           y: "calc(100vh - 140px)",
         });
       }
 
-      // Initial hidden states for ReclaimLifeSection elements (so they start invisible/blurred)
-      const reclaimHeading = outerContainerRef.current.querySelector(".reclaim-heading");
-      const reclaimText = outerContainerRef.current.querySelector(".reclaim-text");
-      const reclaimButton = outerContainerRef.current.querySelector(".reclaim-button");
-
-      if (reclaimHeading) {
-        gsap.set(reclaimHeading, { xPercent: 20, opacity: 0, filter: "blur(12px)" });
+      // 2. Initial hidden states for ReclaimLifeSection text elements
+      if (reclaimHeadingRef.current) {
+        gsap.set(reclaimHeadingRef.current, {
+          xPercent: 20,
+          opacity: 0,
+          filter: "blur(12px)",
+        });
       }
-      if (reclaimText) {
-        gsap.set(reclaimText, { xPercent: -20, opacity: 0, filter: "blur(12px)" });
+      if (reclaimTextRef.current) {
+        gsap.set(reclaimTextRef.current, {
+          xPercent: -20,
+          opacity: 0,
+          filter: "blur(12px)",
+        });
       }
-      // if (reclaimButton) {
-      //   gsap.set(reclaimButton, { xPercent: -20, opacity: 0, filter: "blur(8px)" });
-      // }
+      if (reclaimButtonRef.current) {
+        gsap.set(reclaimButtonRef.current, {
+          yPercent: 30,
+          opacity: 0,
+          filter: "blur(8px)",
+        });
+      }
 
-      // Initial hidden states for ReclaimLifeSection elements (so they start invisible/blurred)
-      // const reclaimHeading = outerContainerRef.current.querySelector(".reclaim-heading");
-      // const reclaimText = outerContainerRef.current.querySelector(".reclaim-text");
-      // const reclaimButton = outerContainerRef.current.querySelector(".reclaim-button");
-
-      // if (reclaimHeading) {
-      //   gsap.set(reclaimHeading, { xPercent: 20, opacity: 0, filter: "blur(12px)" });
-      // }
-      // if (reclaimText) {
-      //   gsap.set(reclaimText, { xPercent: -20, opacity: 0, filter: "blur(12px)" });
-      // }
-      // if (reclaimButton) {
-      //   gsap.set(reclaimButton, { xPercent: -20, opacity: 0, filter: "blur(8px)" });
-      // }
-
-      // Initial states for images: image 0 clipped from left-to-right, rest positioned offscreen right
+      // 3. Initial states for Service images
       imagesRef.current.forEach((img, i) => {
         if (!img) return;
         if (i === 0) {
@@ -111,16 +108,17 @@ export default function Services() {
         }
       });
 
+      // Master Timeline scrubbed over 600vh track
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: outerContainerRef.current,
           start: "top top",
-          end: `bottom bottom`,
+          end: "bottom bottom",
           scrub: 1.2,
         },
       });
 
-      // 0. First image reveals from left to right via clipPath
+      // Step A: First image reveals from left to right via clipPath
       if (imagesRef.current[0]) {
         tl.to(
           imagesRef.current[0],
@@ -133,18 +131,13 @@ export default function Services() {
         );
       }
 
-      // Animate through each service step (card 01 -> 02 -> 03 -> 04)
+      // Step B: Animate through each service card (01 -> 02 -> 03 -> 04)
       for (let i = 1; i < servicesData.length; i++) {
-        // Slide numbers horizontally
-        tl.to(
-          numbersWrapperRef.current,
-          {
-            xPercent: -100 * i,
-            duration: 0.8,
-            ease: "power2.inOut",
-          }
-        )
-          // Slide titles vertically
+        tl.to(numbersWrapperRef.current, {
+          xPercent: -100 * i,
+          duration: 0.8,
+          ease: "power2.inOut",
+        })
           .to(
             titlesWrapperRef.current,
             {
@@ -154,7 +147,6 @@ export default function Services() {
             },
             "<"
           )
-          // Slide descriptions vertically
           .to(
             descriptionsWrapperRef.current,
             {
@@ -165,7 +157,6 @@ export default function Services() {
             "<"
           );
 
-        // Previous image goes behind with opacity 0
         if (imagesRef.current[i - 1]) {
           tl.to(
             imagesRef.current[i - 1],
@@ -179,7 +170,6 @@ export default function Services() {
           );
         }
 
-        // Next image transitions in from right to left
         if (imagesRef.current[i]) {
           tl.fromTo(
             imagesRef.current[i],
@@ -197,129 +187,92 @@ export default function Services() {
           );
         }
 
-        // Hold each service card in view so the user can read the content comfortably
+        // Hold each service card in view for comfortable reading
         tl.to({}, { duration: 0.8 });
       }
 
-      // 1. After all service cards finish, slide ReclaimLifeSection overlay up to cover the viewport
-      // if (reclaimWrapperRef.current) {
-      //   tl.to(
-      //     reclaimWrapperRef.current,
-      //     {
-      //       y: "0vh",
-      //       duration: 1.2,
-      //       ease: "power2.inOut",
-      //     }
-      //   );
-      // }
+      // Step C: AFTER all service cards finish, slide ReclaimLifeSection overlay UP to 0vh (covering full screen)
+      if (reclaimWrapperRef.current) {
+        tl.to(reclaimWrapperRef.current, {
+          y: "0vh",
+          duration: 1.5,
+          ease: "power2.inOut",
+        });
+      }
 
-      // 2. Animate ReclaimLifeSection heading, text, and button into view as the section is revealed
-      // if (reclaimHeading && reclaimText && reclaimButton) {
-      //   tl.to(
-      //     reclaimHeading,
-      //     {
-      //       delay: 5,
-      //       xPercent: 0,
-      //       opacity: 1,
-      //       duration: 1.0,
-      //       ease: "power3.out",
-      //     },
-      //     "-=0.4"
-      //   )
-      //     .to(
-      //       reclaimText,
-      //       {
-      //         xPercent: 0,
-      //         opacity: 1,
-      //         duration: 1.0,
-      //         ease: "power3.out",
-      //       },
-      //       "<"
-      //     ).to(
-      //       reclaimHeading,
-      //       {
-      //         filter: "blur(0px)",
-      //         delay: 1,
-      //         duration: 1.0,
-      //         ease: "power3.out",
-      //       },
-      //     )
-      //   // .to(
-      //   //   reclaimButton,
-      //   //   {
-      //   //     xPercent: 0,
-      //   //     opacity: 1,
-      //   //     filter: "blur(0px)",
-      //   //     duration: 1.0,
-      //   //     ease: "power3.out",
-      //   //   },
-      //   //   "<"
-      //   // );
-      // }
+      // Hold phase: Ensure ReclaimLifeSection is 100% stationary covering the full viewport BEFORE text animates
+      tl.to({}, { duration: 0.6 });
 
-      // // 2. Animate ReclaimLifeSection heading, text, and button into view as the section is revealed
-      // if (reclaimHeading && reclaimText && reclaimButton) {
-      //   tl.to(
-      //     reclaimHeading,
-      //     {
-      //       xPercent: 0,
-      //       opacity: 1,
-      //       duration: 1.0,
-      //       ease: "power3.out",
-      //     },
-      //     "-=0.4"
-      //   )
-      //     .to(
-      //       reclaimText,
-      //       {
-      //         xPercent: 0,
-      //         opacity: 1,
-      //         duration: 1.0,
-      //         ease: "power3.out",
-      //       },
-      //       "<"
-      //     )
-      //   // .to(
-      //   //   reclaimButton,
-      //   //   {
-      //   //     xPercent: 0,
-      //   //     opacity: 1,
-      //   //     filter: "blur(0px)",
-      //   //     duration: 1.0,
-      //   //     ease: "power3.out",
-      //   //   },
-      //   //   "<"
-      //   // );
-      // }
+      // Step D: NOW animate text & button into view AFTER the section is 100% stationary in full view
+      if (
+        reclaimHeadingRef.current &&
+        reclaimTextRef.current &&
+        reclaimButtonRef.current
+      ) {
+        tl.to(reclaimHeadingRef.current, {
+          xPercent: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1.2,
+          ease: "power3.out",
+        })
+          .to(
+            reclaimTextRef.current,
+            {
+              xPercent: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            "<"
+          )
+          .to(
+            reclaimButtonRef.current,
+            {
+              yPercent: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            "<"
+          );
+      }
+
+      // Step E: Hold phase so ReclaimLifeSection rests in view before unpinning to next section
+      tl.to({}, { duration: 1.5 });
     },
     { scope: outerContainerRef }
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[600vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[650vh]">
       <div className="sticky top-0 z-10 w-full min-h-dvh overflow-hidden">
+        {/* Services Section */}
         <section
           ref={sectionRef}
           className="relative w-full h-full bg-white pt-10 flex items-end flex-col"
         >
-          <div
-            className="relative w-full mx-auto flex flex-row gap-24 pl-[140px] pt-[20px]"
-          >
-            <div className="absolute bottom-0 h-[80%] left-0 w-full" style={{
-              background:
-                "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
-            }}>
-            </div>
+          <div className="relative w-full mx-auto flex flex-row gap-24 pl-[140px] pt-[20px]">
+            <div
+              className="absolute bottom-0 h-[80%] left-0 w-full"
+              style={{
+                background:
+                  "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
+              }}
+            />
             <div className="relative w-full flex flex-col lg:flex-row items-center justify-between">
               <div className="w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
                 <div className="overflow-hidden w-[250px]">
-                  <div ref={numbersWrapperRef} className="flex flex-row w-full h-full">
+                  <div
+                    ref={numbersWrapperRef}
+                    className="flex flex-row w-full h-full"
+                  >
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
-                        <span
-                          className="text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full pr-[100px]"
-                        >
+                        <span className="text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full pr-[100px]">
                           {item.id}
                         </span>
                       </div>
@@ -329,12 +282,19 @@ export default function Services() {
 
                 {/* Titles vertical track */}
                 <div className="overflow-hidden h-[210px] w-full">
-                  <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
+                  <div
+                    ref={titlesWrapperRef}
+                    className="flex flex-col w-full h-full"
+                  >
                     {servicesData.map((item, index) => (
-                      <div key={index} className="h-full shrink-0 flex items-center">
-                        <h3 className="text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
-                          whiteSpace: "pre-line"
-                        }}>
+                      <div
+                        key={index}
+                        className="h-full shrink-0 flex items-center"
+                      >
+                        <h3
+                          className="text-[60px] font-Adorage uppercase text-[#545454] leading-tight"
+                          style={{ whiteSpace: "pre-line" }}
+                        >
                           {item.title}
                         </h3>
                       </div>
@@ -344,10 +304,16 @@ export default function Services() {
 
                 {/* Descriptions vertical track */}
                 <div className="overflow-hidden h-[120px] w-full">
-                  <div ref={descriptionsWrapperRef} className="flex flex-col w-full h-full">
+                  <div
+                    ref={descriptionsWrapperRef}
+                    className="flex flex-col w-full h-full"
+                  >
                     {servicesData.map((item, index) => (
-                      <div key={index} className="h-full shrink-0 flex items-center">
-                        <p className="text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
+                      <div
+                        key={index}
+                        className="h-full shrink-0 flex items-center"
+                      >
+                        <p className="text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2">
                           {item.description}
                         </p>
                       </div>
@@ -378,15 +344,42 @@ export default function Services() {
               </div>
             </div>
           </div>
-
         </section>
-        <div className="relative mt-[-2%] w-full">
-          <ReclaimLifeSection />
+
+        {/* ReclaimLifeSection Overlay Card */}
+        <div
+          ref={reclaimWrapperRef}
+          className="relative mt-[-2%] w-full rounded-t-[40px] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.3)] bg-cover bg-center bg-no-repeat flex items-center justify-center py-20 px-6 md:px-12 text-center select-none h-dvh z-20"
+          style={{ backgroundImage: "url('/reclaimlife-bg.png')" }}
+        >
+          <div className="mx-auto flex flex-col items-center justify-center pt-[50px] z-10">
+            <h2
+              ref={reclaimHeadingRef}
+              className="text-white font-Adorage uppercase text-[42px] sm:text-[60px] md:text-[80px] lg:text-[130px] font-normal leading-[1.05] drop-shadow-[0_4px_0px_#00000066]"
+            >
+              RECLAIM YOUR LIFE WITH <br className="hidden sm:block" /> ADVANCED
+              SPINE SURGERY
+            </h2>
+
+            <p
+              ref={reclaimTextRef}
+              className="mt-6 md:mt-8 text-white/95 font-Matangi-Medium text-lg sm:text-2xl md:text-[40px] font-normal leading-relaxed"
+            >
+              Providing Patients With Compassionate, Specialized{" "}
+              <br className="hidden md:block" />
+              Treatments for Optimal Recovery & Long-term Health
+            </p>
+
+            <div ref={reclaimButtonRef} className="mt-10 md:mt-18">
+              <a href="#appointment" rel="noopener noreferrer">
+                <button className="px-8 py-3.5 md:px-15 md:py-5 rounded-full bg-[#8C6D3B] border-2 border-white/90 text-white font-sans text-base md:text-[25px] font-medium tracking-wide shadow-lg cursor-pointer">
+                  Book Your Appointment
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   );
 }
-
-

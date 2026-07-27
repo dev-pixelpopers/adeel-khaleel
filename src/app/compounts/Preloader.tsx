@@ -161,7 +161,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           className="absolute inset-0 w-full h-full"
           style={{
             ...maskStyle,
-            backgroundColor: "#8E6C36",
+            backgroundColor: "#C0A870",
           }}
         />
       </div>
