@@ -310,7 +310,7 @@ export default function Services() {
                 "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
             }}>
             </div>
-            <div className="relative w-full flex flex-col lg:flex-row items-center justify-between">
+            <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[100px]">
               <div className="w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
                 <div className="overflow-hidden w-[250px]">
@@ -357,7 +357,7 @@ export default function Services() {
               </div>
 
               {/* Right side Images stack */}
-              <div className="w-1/2 grid grid-cols-1 grid-rows-1 relative z-10 h-[800px] w-[800px] overflow-hidden items-center justify-items-center -mb-[7%]">
+              <div className="w-1/2 grid grid-cols-1 grid-rows-1 relative z-10 items-center justify-items-center -mb-[7%]">
                 {servicesData.map((item, index) => (
                   <div
                     key={index}
@@ -366,11 +366,11 @@ export default function Services() {
                     }}
                     className="col-start-1 row-start-1 relative w-full h-full flex items-center justify-center"
                   >
-                    <div className="relative w-[700px] h-[700px] -rotate-[7deg]">
+                    <div className="relative rotate-3 -mb-[12%] flex">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover"
+                        className="object-cover w-[700px] h-[800px]"
                       />
                     </div>
                   </div>
@@ -380,7 +380,7 @@ export default function Services() {
           </div>
 
         </section>
-        <div className="relative mt-[-2%] w-full">
+        <div className="relative w-full">
           <ReclaimLifeSection />
         </div>
       </div>
