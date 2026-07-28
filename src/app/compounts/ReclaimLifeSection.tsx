@@ -96,7 +96,7 @@ export default function ReclaimLifeSection() {
     <>
       <div ref={containerRef} className="relative w-full ">
         <section
-          className="relative w-full h-dvh bg-cover bg-center bg-no-repeat flex items-center justify-center py-20 px-6 md:px-12 text-center select-none overflow-hidden min-h-dvh  mt-[-2%]"
+          className="relative w-full h-dvh bg-cover bg-center bg-no-repeat flex items-center justify-center py-20 px-6 md:px-12 text-center select-none overflow-hidden min-h-dvh  mt-[-7%]"
           style={{ backgroundImage: "url('/reclaimlife-bg.png')" }}
         >
           <div ref={sectionRef} className="relative top-0 mx-auto flex flex-col items-center justify-center z-10 pt-[200px]">

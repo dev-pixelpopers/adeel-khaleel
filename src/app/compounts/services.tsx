@@ -61,16 +61,16 @@ export default function Services() {
       }
 
       // Initial hidden states for ReclaimLifeSection elements (so they start invisible/blurred)
-      const reclaimHeading = outerContainerRef.current.querySelector(".reclaim-heading");
-      const reclaimText = outerContainerRef.current.querySelector(".reclaim-text");
-      const reclaimButton = outerContainerRef.current.querySelector(".reclaim-button");
+      // const reclaimHeading = outerContainerRef.current.querySelector(".reclaim-heading");
+      // const reclaimText = outerContainerRef.current.querySelector(".reclaim-text");
+      // const reclaimButton = outerContainerRef.current.querySelector(".reclaim-button");
 
-      if (reclaimHeading) {
-        gsap.set(reclaimHeading, { xPercent: 20, opacity: 0, filter: "blur(12px)" });
-      }
-      if (reclaimText) {
-        gsap.set(reclaimText, { xPercent: -20, opacity: 0, filter: "blur(12px)" });
-      }
+      // if (reclaimHeading) {
+      //   gsap.set(reclaimHeading, { xPercent: 20, opacity: 0, filter: "blur(12px)" });
+      // }
+      // if (reclaimText) {
+      //   gsap.set(reclaimText, { xPercent: -20, opacity: 0, filter: "blur(12px)" });
+      // }
       // if (reclaimButton) {
       //   gsap.set(reclaimButton, { xPercent: -20, opacity: 0, filter: "blur(8px)" });
       // }
@@ -310,7 +310,7 @@ export default function Services() {
                 "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
             }}>
             </div>
-            <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[100px]">
+            <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[150px]">
               <div className="w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
                 <div className="overflow-hidden w-[250px]">
@@ -366,7 +366,7 @@ export default function Services() {
                     }}
                     className="col-start-1 row-start-1 relative w-full h-full flex items-center justify-center"
                   >
-                    <div className="relative rotate-3 -mb-[12%] flex">
+                    <div className="relative rotate-3 flex">
                       <img
                         src={item.image}
                         alt={item.title}
