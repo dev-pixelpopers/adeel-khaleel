@@ -13,15 +13,15 @@ export default function Footer() {
                         Menu
                     </h3>
                     <ul className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
-                        <li><a href="#" className="hover:text-white transition-colors">Meet the Team</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Procedures</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Pre Operation</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Post Operation</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Traveling for Surgery</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Our Process</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">FAQ's</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Online Appointments</a></li>
+                        <li><a href="/meet-the-team" className="hover:text-white transition-colors">Meet the Team</a></li>
+                        <li><a href="/procedures" className="hover:text-white transition-colors">Procedures</a></li>
+                        <li><a href="/pre-operation" className="hover:text-white transition-colors">Pre Operation</a></li>
+                        <li><a href="/post-operation" className="hover:text-white transition-colors">Post Operation</a></li>
+                        <li><a href="/traveling-for-surgery" className="hover:text-white transition-colors">Traveling for Surgery</a></li>
+                        <li><a href="/our-process" className="hover:text-white transition-colors">Our Process</a></li>
+                        <li><a href="/services" className="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="/faq" className="hover:text-white transition-colors">FAQ's</a></li>
+                        <li><a href="/contact" className="hover:text-white transition-colors">Online Appointments</a></li>
                     </ul>
                 </div>
 

@@ -34,8 +34,13 @@ const faqData = [
   },
 ];
 
-export default function FAQSection() {
+interface FAQSectionProps {
+  variant?: "dark" | "light";
+}
+
+export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const isLight = variant === "light";
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -43,17 +48,27 @@ export default function FAQSection() {
 
 
   const gradientBorderStyle = {
-    borderImage: "linear-gradient(90deg, #8F7A3500 10%, #FFE9A1 50%, #8F7A3500 100%) 1",
+    borderImage: isLight
+      ? "linear-gradient(90deg, #8F7A3500 10%, #8E6C36 50%, #8F7A3500 100%) 1"
+      : "linear-gradient(90deg, #8F7A3500 10%, #FFE9A1 50%, #8F7A3500 100%) 1",
   };
 
   return (
     <section
-      className="relative w-full min-h-[700px] bg-cover bg-center bg-no-repeat py-18 px-10 md:px-16 lg:px-35 select-none flex flex-col items-center justify-center"
-      style={{ backgroundImage: "url('/reclaimlife-bg.png')" }} 
+      className={`relative w-full min-h-[700px] bg-cover bg-center bg-no-repeat py-18 px-10 md:px-16 lg:px-35 select-none flex flex-col items-center justify-center ${
+        isLight ? "bg-white" : ""
+      }`}
+      style={isLight ? undefined : { backgroundImage: "url('/reclaimlife-bg.png')" }}
     >
       <div className="w-full mx-auto flex flex-col items-center">
 
-        <h2 className="text-white font-Adorage uppercase text-[36px] sm:text-[50px] md:text-[82px] font-normal tracking-wide text-center leading-tight mb-12 drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+        <h2
+          className={`font-Adorage uppercase text-[36px] sm:text-[50px] md:text-[82px] font-normal tracking-wide text-center leading-tight mb-12 ${
+            isLight
+              ? "text-[#545454]"
+              : "text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)]"
+          }`}
+        >
           HAVE QUESTIONS, WE HAVE ANSWERS
         </h2>
 
@@ -71,15 +86,19 @@ export default function FAQSection() {
                   onClick={() => toggleAccordion(index)}
                   className="w-full flex items-center justify-between py-6 text-left focus:outline-none group cursor-pointer"
                 >
-                  <span className="text-white font-Matangi-Medium text-xl sm:text-2xl md:text-[36px] font-normal tracking-wide pr-4">
+                  <span
+                    className={`font-Matangi-Medium text-xl sm:text-2xl md:text-[36px] font-normal tracking-wide pr-4 ${
+                      isLight ? "text-[#333]" : "text-white"
+                    }`}
+                  >
                     {faq.question}
                   </span>
 
                         <svg
-                            className={`w-10 h-10 text-white transition-transform duration-300 ease-in-out shrink-0 ${isOpen ? "rotate-180" : "rotate-0"
+                            className={`w-10 h-10 transition-transform duration-300 ease-in-out shrink-0 ${isLight ? "text-[#8E6C36]" : "text-white"} ${isOpen ? "rotate-180" : "rotate-0"
                                 }`}
                             width="12" height="12" viewBox="0 0 36 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.39258 1.43604L17.8926 17.436L34.3926 1.43604" stroke="white" stroke-width="4" />
+                            <path d="M1.39258 1.43604L17.8926 17.436L34.3926 1.43604" stroke="currentColor" stroke-width="4" />
                         </svg>
 
                 </button>
@@ -92,7 +111,11 @@ export default function FAQSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-white/90 font-Matangi-Regular text-base sm:text-lg md:text-[28px] font-light leading-relaxed pr-8">
+                    <p
+                      className={`font-Matangi-Regular text-base sm:text-lg md:text-[28px] font-light leading-relaxed pr-8 ${
+                        isLight ? "text-[#555555]" : "text-white/90"
+                      }`}
+                    >
                       {faq.answer}
                     </p>
                   </div>

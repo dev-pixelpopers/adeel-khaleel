@@ -116,7 +116,7 @@ export default function ReclaimLifeSection() {
             </p>
 
             <div ref={buttonRef} className="mt-10 md:mt-18">
-              <a href="#appointment" rel="noopener noreferrer">
+              <a href="/contact" rel="noopener noreferrer">
                 <button className="px-8 py-3.5 md:px-15 md:py-5 rounded-full bg-[#8C6D3B] border-2 border-white/90 text-white font-sans text-base md:text-[25px] font-medium tracking-wide shadow-lg cursor-pointer">
                   Book Your Appointment
                 </button>
