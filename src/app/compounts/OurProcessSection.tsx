@@ -51,25 +51,109 @@ const processSteps = [
   },
 ];
 
+interface Step {
+  id: string;
+  title: string;
+  description: string;
+}
+
+function ProcessStepRow({ step, index }: { step: Step; index: number }) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const isLeft = index % 2 === 0;
+
+  useGSAP(
+    () => {
+      // Entrance transition: text slides in from its side and fades in
+      gsap.set(textRef.current, {
+        opacity: 0,
+        xPercent: isLeft ? -12 : 12,
+      });
+
+      gsap.to(textRef.current, {
+        opacity: 1,
+        xPercent: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: rowRef.current,
+          start: "top 78%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Step number becomes prominent while its row is centered in view
+      gsap.set(circleRef.current, { scale: 1 });
+      gsap.to(circleRef.current, {
+        scale: 1.3,
+        backgroundColor: "#AD974E",
+        boxShadow: "0 0 0 10px rgba(142,108,54,0.18)",
+        duration: 0.45,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: rowRef.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+    },
+    { scope: rowRef }
+  );
+
+  return (
+    <div
+      ref={rowRef}
+      className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-10 mb-14 last:mb-0"
+    >
+      {/* Left column */}
+      <div className={`order-2 md:order-1 ${isLeft ? "md:text-right" : ""}`}>
+        {isLeft && (
+          <div ref={textRef}>
+            <h3 className="text-[#545454] font-Adorage uppercase text-[22px] sm:text-[26px] leading-tight">
+              {step.title}
+            </h3>
+            <p className="mt-3 text-[#555555] font-Matangi-Regular text-base leading-relaxed md:ml-auto md:max-w-md">
+              {step.description}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Center step marker */}
+      <div className="order-1 md:order-2 flex justify-center">
+        <div
+          ref={circleRef}
+          className="relative z-10 shrink-0 w-14 h-14 rounded-full bg-[#8E6C36] flex items-center justify-center shadow-md"
+        >
+          <span className="text-white font-Adorage text-lg">{step.id}</span>
+        </div>
+      </div>
+
+      {/* Right column */}
+      <div className="order-3 md:order-3">
+        {!isLeft && (
+          <div ref={textRef}>
+            <h3 className="text-[#545454] font-Adorage uppercase text-[22px] sm:text-[26px] leading-tight">
+              {step.title}
+            </h3>
+            <p className="mt-3 text-[#555555] font-Matangi-Regular text-base leading-relaxed md:max-w-md">
+              {step.description}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function OurProcessSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      const steps = listRef.current?.querySelectorAll(".process-step");
-      if (steps && steps.length) {
-        gsap.set(steps, { opacity: 0, yPercent: 15 });
-        gsap.to(steps, {
-          opacity: 1,
-          yPercent: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: { trigger: listRef.current, start: "top 80%" },
-        });
-      }
-
       const line = listRef.current?.querySelector(".process-line");
       if (line) {
         gsap.set(line, { scaleY: 0, transformOrigin: "top" });
@@ -93,30 +177,12 @@ export default function OurProcessSection() {
       ref={sectionRef}
       className="w-full bg-white py-20 px-6 md:px-12 select-none"
     >
-      <div className="max-w-[900px] mx-auto">
+      <div className="max-w-[1000px] mx-auto">
         <div ref={listRef} className="relative">
-          <div className="process-line hidden sm:block absolute left-[27px] top-2 bottom-2 w-[2px] bg-[#EBE3C8]" />
+          <div className="process-line absolute left-1/2 -translate-x-1/2 top-2 bottom-2 w-[2px] bg-[#EBE3C8]" />
 
-          {processSteps.map((step) => (
-            <div
-              key={step.id}
-              className="process-step relative flex gap-6 sm:gap-8 mb-12 last:mb-0"
-            >
-              <div className="relative z-10 shrink-0 w-14 h-14 rounded-full bg-[#8E6C36] flex items-center justify-center shadow-md">
-                <span className="text-white font-Adorage text-lg">
-                  {step.id}
-                </span>
-              </div>
-
-              <div className="pt-1">
-                <h3 className="text-[#545454] font-Adorage uppercase text-[22px] sm:text-[26px] leading-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-[#555555] font-Matangi-Regular text-base leading-relaxed max-w-xl">
-                  {step.description}
-                </p>
-              </div>
-            </div>
+          {processSteps.map((step, index) => (
+            <ProcessStepRow key={step.id} step={step} index={index} />
           ))}
         </div>
       </div>
