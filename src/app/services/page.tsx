@@ -1,8 +1,7 @@
 import Header from "../compounts/Header";
 import Footer from "../compounts/Footer";
 import InnerPageBanner from "../compounts/InnerPageBanner";
-import Services from "../compounts/services";
-import OrthopedicCareSection from "../compounts/OrthopedicCareSection";
+import ServicesConditionsSection from "../compounts/ServicesConditionsSection";
 import ContactCTASection from "../compounts/ContactCTASection";
 
 export default function ServicesPage() {
@@ -14,8 +13,7 @@ export default function ServicesPage() {
         title="Our Services"
         description="From minimally invasive procedures to complex deformity corrections, explore the full range of spine and orthopedic care we provide."
       />
-      <Services />
-      <OrthopedicCareSection />
+      <ServicesConditionsSection />
       <ContactCTASection />
       <Footer />
     </>
