@@ -51,29 +51,34 @@ export default function Banner() {
         gsap.set(spineParagraph, { xPercent: -20, opacity: 0 });
       }
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bannerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1.2,
-        },
-      });
+      //  const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: bannerRef.current,
+      //     start: "top top",
+      //     end: "bottom bottom",
+      //     scrub: 1.2,
+      //   },
+      // });
+
+      const tl = gsap.timeline({ paused: true });
+
       tl.to(ellipseRef.current, {
         scale: 1,
-        duration: 1,
+        duration: 1.5,
         ease: "power3.out",
-      }).to(
-        headingRef.current,
-        {
-          opacity: 1,
-          rotate: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "<"
-      )
+      },
+        "+=0.6")
+        .to(
+          headingRef.current,
+          {
+            opacity: 1,
+            rotate: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "<"
+        )
         .to(
           leftTextRef.current,
           {
@@ -88,7 +93,7 @@ export default function Banner() {
           mainBannerImage.current,
           {
             clipPath: "inset(0% 0% 0% 0%)",
-            duration: 1,
+            duration: 1.5,
             ease: "power3.out",
           },
           "<"
@@ -101,37 +106,37 @@ export default function Banner() {
             ease: "power3.out",
           }
         )
-        .to(
-          headerEl,
-          {
-            opacity: 1,
-            yPercent: 0,
-            duration: 1,
-            ease: "power2.out",
-          }
-        )
-        // Hold phase so user can read the completed hero banner before it slides up
-        .to({}, { duration: 1.5 })
-        // 6. Slide Banner section UP out of view to reveal AdvancedSpineSection
-        .to(
-          sectionRef.current,
-          {
-            yPercent: -100,
-            duration: 2,
-            ease: "power2.inOut",
-          }
-        )
-        // Hide Header simultaneously as Banner section slides UP out of view
-        .to(
-          headerEl,
-          {
-            yPercent: -100,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power2.in",
-          },
-          "<"
-        );
+      //   .to(
+      //   headerEl,
+      //   {
+      //     opacity: 1,
+      //     yPercent: 0,
+      //     duration: 1,
+      //     ease: "power2.out",
+      //   }
+      // )
+      // Hold phase so user can read the completed hero banner before it slides up
+      // .to({}, { duration: 1.5 })
+      // // 6. Slide Banner section UP out of view to reveal AdvancedSpineSection
+      // .to(
+      //   sectionRef.current,
+      //   {
+      //     yPercent: -100,
+      //     duration: 2,
+      //     ease: "power2.inOut",
+      //   }
+      // )
+      // // Hide Header simultaneously as Banner section slides UP out of view
+      // .to(
+      //   headerEl,
+      //   {
+      //     yPercent: -100,
+      //     opacity: 0,
+      //     duration: 1.5,
+      //     ease: "power2.in",
+      //   },
+      //   "<"
+      // );
 
       if (spineHeading && spineParagraph) {
         tl.to(
@@ -154,6 +159,49 @@ export default function Banner() {
           "<"
         );
       }
+
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bannerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.2,
+        },
+      });
+
+      scrollTl.to(
+        headerEl,
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      )
+        .to(
+          sectionRef.current,
+          {
+            yPercent: -100,
+            ease: "none",
+          }
+        )
+        .to(
+          headerEl,
+          {
+            yPercent: -100,
+            opacity: 0,
+            ease: "none",
+          },
+          "<"
+        );
+
+      ScrollTrigger.create({
+        trigger: bannerRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          tl.restart();
+        },
+      });
     },
     { scope: bannerRef }
   );

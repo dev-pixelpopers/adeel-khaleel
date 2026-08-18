@@ -14,7 +14,7 @@ import Services from "./compounts/services";
 export default function Home() {
   return (
     <>
-      <Preloader />
+      {/* <Preloader /> */}
       <Header />
       <VideoBanner />
       <div className="relative">

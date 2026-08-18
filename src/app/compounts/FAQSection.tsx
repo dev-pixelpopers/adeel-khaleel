@@ -98,7 +98,7 @@ export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
                             className={`w-10 h-10 transition-transform duration-300 ease-in-out shrink-0 ${isLight ? "text-[#8E6C36]" : "text-white"} ${isOpen ? "rotate-180" : "rotate-0"
                                 }`}
                             width="12" height="12" viewBox="0 0 36 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.39258 1.43604L17.8926 17.436L34.3926 1.43604" stroke="currentColor" stroke-width="4" />
+                            <path d="M1.39258 1.43604L17.8926 17.436L34.3926 1.43604" stroke="currentColor" strokeWidth="4" />
                         </svg>
 
                 </button>
