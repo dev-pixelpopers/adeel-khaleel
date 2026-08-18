@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+html/contact.html
+html/services.html
+scratch_footer_text.txt
+scratch_services_text.txt
