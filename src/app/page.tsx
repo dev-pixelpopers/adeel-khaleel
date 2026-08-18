@@ -19,7 +19,7 @@ export default function Home() {
       <VideoBanner />
       <div className="relative">
         <Banner />
-        {/* <AdvancedSpineSection /> */}
+        <AdvancedSpineSection />
       </div>
       <Services />
       {/* <ServicesAndReclaimSection /> */}

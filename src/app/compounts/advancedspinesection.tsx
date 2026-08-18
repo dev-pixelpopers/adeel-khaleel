@@ -7,6 +7,32 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 export default function AdvancedSpineSection() {
+
+    useGSAP(() => {
+
+        gsap.set('.advanced-spine-heading', { x: 100, opacity: 0 });
+        gsap.set('.advanced-spine-paragraph', { x: -100, opacity: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 60%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        tl.to('.advanced-spine-heading', {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+        }).to('.advanced-spine-paragraph', {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+        }, "<")
+
+    });
+
     const sectionRef = useRef<HTMLElement>(null);
     const headingRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLParagraphElement>(null);
