@@ -60,13 +60,7 @@ export default function Banner() {
       //   },
       // });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+      const tl = gsap.timeline({ paused: true });
 
       tl.to(ellipseRef.current, {
         scale: 1,
@@ -112,15 +106,15 @@ export default function Banner() {
             ease: "power3.out",
           }
         )
-      //   .to(
-      //   headerEl,
-      //   {
-      //     opacity: 1,
-      //     yPercent: 0,
-      //     duration: 1,
-      //     ease: "power2.out",
-      //   }
-      // )
+        .to(
+        headerEl,
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      )
       // Hold phase so user can read the completed hero banner before it slides up
       // .to({}, { duration: 1.5 })
       // // 6. Slide Banner section UP out of view to reveal AdvancedSpineSection
@@ -163,37 +157,20 @@ export default function Banner() {
             ease: "power3.out",
           },
           "<"
-        )
+        );
       }
 
-      tl.to(
-        headerEl,
-        {
-          opacity: 1,
-          yPercent: 0,
-          duration: 1,
-          ease: "power2.out",
-        }
-      )
-      // 
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bannerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1.2,
+        },
+      });
 
-      // const scrollTl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: bannerRef.current,
-      //     start: "top top",
-      //     end: "bottom bottom",
-      //     toggleActions: "play none none reverse",
-      //   },
-      // })
-      // scrollTl.to(
-      //   sectionRef.current,
-      //   {
-      //     yPercent: -100,
-      //     ease: "none",
-      //   }
-      // );
-
-      // scrollTl.to(
+      scrollTl
+      // .to(
       //   headerEl,
       //   {
       //     opacity: 1,
@@ -202,38 +179,42 @@ export default function Banner() {
       //     ease: "power2.out",
       //   }
       // )
-      //   .to(
-      //     sectionRef.current,
-      //     {
-      //       yPercent: -100,
-      //       ease: "none",
-      //     }
-      //   )
-      // .to(
-      //   headerEl,
-      //   {
-      //     yPercent: -100,
-      //     opacity: 0,
-      //     ease: "none",
-      //   },
-      //   "<"
-      // );
+        .to(
+          sectionRef.current,
+          {
+            yPercent: -100,
+            ease: "none",
+          }
+        )
+        // .to(
+        //   headerEl,
+        //   {
+        //     yPercent: -100,
+        //     opacity: 0,
+        //     ease: "none",
+        //   },
+        //   "<"
+        // );
 
-      // ScrollTrigger.create({
-      //   trigger: bannerRef.current,
-      //   start: "top 80%",
-      //   onEnter: () => {
-      //     tl.restart();
-      //   },
-      // });
+      ScrollTrigger.create({
+        trigger: bannerRef.current,
+        start: "top 99%",
+        onEnter: () => {
+          tl.play();
+        },
+      });
     },
     { scope: bannerRef }
   );
 
   return (
-    <div ref={bannerRef} className="relative w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1">
+    <div ref={bannerRef} className="relative w-full h-[150vh]">
       {/* <Header /> */}
-      <div className="z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1">
+      <div className="sticky top-0 z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1">
+        {/* AdvancedSpineSection sits stationary BEHIND Banner (z-0) */}
+        <div className="col-start-1 row-start-1 w-full h-full z-0 flex items-center justify-center bg-white">
+          <AdvancedSpineSection />
+        </div>
 
         {/* Banner Hero Section sits ON TOP (z-10) and slides UP to reveal AdvancedSpineSection */}
         <section

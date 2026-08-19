@@ -3,8 +3,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function VideoBanner() {
+gsap.registerPlugin(ScrollTrigger)
+
+interface VideoBannerProps {
+    onPassed: () => void;
+}
+
+export default function VideoBanner({ onPassed }: VideoBannerProps) {
     const containerRef = useRef<HTMLElement>(null);
     const videoWrapperRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
@@ -13,6 +20,79 @@ export default function VideoBanner() {
     const overlayRef = useRef<HTMLDivElement>(null);
 
     const [assetsLoaded, setAssetsLoaded] = useState(false);
+    const [isLeaving, setIsLeaving] = useState(false);
+
+    useEffect(() => {
+        if (isLeaving) return;
+
+        const preventScroll = (event: WheelEvent) => {
+            if (window.scrollY <= 1) {
+                event.preventDefault();
+            }
+        };
+
+        const preventTouch = (event: TouchEvent) => {
+            if (window.scrollY <= 1) {
+                event.preventDefault();
+            }
+        };
+
+        const preventKeyboardScroll = (event: KeyboardEvent) => {
+            if (window.scrollY <= 1) {
+                const scrollKeys = [
+                    " ",
+                    "ArrowDown",
+                    "ArrowUp",
+                    "PageDown",
+                    "PageUp",
+                    "Home",
+                    "End",
+                ];
+
+                if (scrollKeys.includes(event.key)) {
+                    event.preventDefault();
+                }
+            }
+        };
+
+        window.addEventListener("wheel", preventScroll, {
+            passive: false,
+        });
+
+        window.addEventListener("touchmove", preventTouch, {
+            passive: false,
+        });
+
+        window.addEventListener("keydown", preventKeyboardScroll);
+
+        const style = document.createElement("style");
+
+        style.id = "video-banner-scrollbar-hide";
+
+        style.innerHTML = `
+        html {
+            scrollbar-width: none !important;
+        }
+
+        html::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+    `;
+
+        document.head.appendChild(style);
+
+        return () => {
+            window.removeEventListener("wheel", preventScroll);
+            window.removeEventListener("touchmove", preventTouch);
+            window.removeEventListener("keydown", preventKeyboardScroll);
+
+            document.getElementById(
+                "video-banner-scrollbar-hide"
+            )?.remove();
+        };
+    }, [isLeaving]);
 
     // Wait for all images, videos and fonts
     useEffect(() => {
@@ -193,23 +273,48 @@ export default function VideoBanner() {
 
 
     const scrollToNext = () => {
-        // Don't allow skip before all assets are loaded
-        if (!assetsLoaded) return;
+        if (!assetsLoaded || isLeaving) return;
 
-        if (containerRef.current) {
-            const nextSection = containerRef.current.nextElementSibling;
+        const container = containerRef.current;
 
-            if (nextSection) {
-                nextSection.scrollIntoView({
-                    behavior: "smooth",
+        if (!container) return;
+
+        setIsLeaving(true);
+
+        const nextSection = container.nextElementSibling;
+
+        if (!nextSection) return;
+
+        const videoHeight = container.offsetHeight;
+
+        nextSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+
+        setTimeout(() => {
+            const currentScroll = window.scrollY;
+
+            // Remove VideoBanner
+            onPassed();
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const correctedScroll = Math.max(
+                        0,
+                        currentScroll - videoHeight
+                    );
+
+                    window.scrollTo({
+                        top: correctedScroll,
+                        behavior: "auto",
+                    });
+
+                    // Recalculate all ScrollTrigger positions
+                    ScrollTrigger.refresh();
                 });
-            } else {
-                window.scrollTo({
-                    top: window.innerHeight,
-                    behavior: "smooth",
-                });
-            }
-        }
+            });
+        }, 1000);
     };
 
     return (

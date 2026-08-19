@@ -370,7 +370,7 @@ export default function Services() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-cover w-[700px] h-[800px]"
+                        className="object-cover w-[700px] h-[750px] mt-[100px]"
                       />
                     </div>
                   </div>
