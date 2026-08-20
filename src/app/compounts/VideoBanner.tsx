@@ -359,7 +359,7 @@ export default function VideoBanner({ onPassed }: VideoBannerProps) {
                     className="inline-block text-[30px] tracking-[0.2em] uppercase text-white/90 drop-shadow-md text-center px-4 opacity-0"
                     ref={spanTextRef}
                 >
-                    Click To Scroll Below
+                    Skip Video
                 </span>
                 <svg
                     ref={arrowRef}

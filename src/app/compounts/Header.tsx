@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-6 sm:px-12 lg:px-16 py-6 header opacity-0">
-      <div className="max-w-[1680px] mx-auto flex items-center justify-between rounded-full border border-white/20 bg-[#545454]/80 px-3 pr-6 py-2 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.15)]">
+      <div className="max-w-[1680px] mx-auto flex items-center justify-between rounded-full border border-white/20 bg-[#545454]/40 px-3 pr-6 py-2 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.15)]">
 
         <a href="/" className="flex items-center gap-3 shrink-0">
           <div className="w-12 h-12 sm:w-[400px] sm:h-[100px] items-center justify-center p-2">
