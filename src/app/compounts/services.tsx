@@ -296,29 +296,28 @@ export default function Services() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[600vh]">
+    <div ref={outerContainerRef} className="relative w-full md:h-[600vh]">
       <div className="sticky top-0 z-10 w-full min-h-dvh overflow-hidden">
         <section
           ref={sectionRef}
           className="relative w-full h-full bg-white pt-10 flex items-end flex-col"
         >
           <div
-            className="relative w-full mx-auto flex flex-row gap-24 pl-[140px] pt-[20px]"
-          >
+            className="relative w-full mx-auto flex flex-row gap-6 pl-5 pr-5 pt-5 md:gap-10 md:pl-10 md:pr-10 lg:gap-16 lg:pl-16 lg:pr-10 xl:gap-24 xl:pl-[140px] xl:pr-0">
             <div className="absolute bottom-0 h-[80%] left-0 w-full" style={{
               background:
                 "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
             }}>
             </div>
             <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[150px]">
-              <div className="w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
+              <div className="w-full lg:w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
-                <div className="overflow-hidden w-[250px]">
+                <div className="overflow-hidden w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] xl:w-[250px]">
                   <div ref={numbersWrapperRef} className="flex flex-row w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
                         <span
-                          className="text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full pr-[100px]"
+                          className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[170px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
                         >
                           {item.id}
                         </span>
@@ -328,11 +327,11 @@ export default function Services() {
                 </div>
 
                 {/* Titles vertical track */}
-                <div className="overflow-hidden h-[210px] w-full">
+                <div className="overflow-hidden h-[120px] sm:h-[150px] md:h-[170px] lg:h-[190px] xl:h-[210px] w-full">
                   <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <h3 className="text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
+                        <h3 className="text-[30px] sm:text-[38px] md:text-[44px] lg:text-[52px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
                           whiteSpace: "pre-line"
                         }}>
                           {item.title}
@@ -343,11 +342,11 @@ export default function Services() {
                 </div>
 
                 {/* Descriptions vertical track */}
-                <div className="overflow-hidden h-[120px] w-full">
+                <div className="overflow-hidden h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] w-full">
                   <div ref={descriptionsWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <p className="text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
+                        <p className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[30px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
                           {item.description}
                         </p>
                       </div>
@@ -357,7 +356,7 @@ export default function Services() {
               </div>
 
               {/* Right side Images stack */}
-              <div className="w-1/2 grid grid-cols-1 grid-rows-1 relative z-10 items-center justify-items-center -mb-[7%]">
+              <div className="w-full lg:w-1/2 grid grid-cols-1 grid-rows-1 relative z-10 items-center justify-items-center -mb-[7%]">
                 {servicesData.map((item, index) => (
                   <div
                     key={index}
@@ -370,7 +369,7 @@ export default function Services() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-cover w-[700px] h-[750px] mt-[100px]"
+                        className="object-cover w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[500px] lg:w-[550px] lg:h-[620px] xl:w-[700px] xl:h-[750px] mt-10 lg:mt-[100px]"
                       />
                     </div>
                   </div>

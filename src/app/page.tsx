@@ -53,27 +53,27 @@ export default function Home() {
     <>
       {/* <Preloader /> */}
       <Header />
-      {!videoPassed && (
+      {/* {!videoPassed && (
         <VideoBanner
           onPassed={() => {
             setVideoPassed(true);
           }}
         />
-      )}
+      )} */}
 
-      <div className="relative">
+      {/* <div className="relative">
 
         <div ref={bannerStartRef} className="relative">
           <Banner />
-        </div>
+        </div> */}
         {/* <AdvancedSpineSection /> */}
-      </div>
+      {/* </div> */}
       <Services />
       {/* <ServicesAndReclaimSection /> */}
-      <OrthopedicCareSection />
+      {/* <OrthopedicCareSection />
       <FAQSection />
       <TestimonialsSection />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

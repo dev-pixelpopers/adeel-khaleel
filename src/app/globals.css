@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+    --breakpoint-3xs: 320px;
+    --breakpoint-2xs: 350px;
+    --breakpoint-xs: 428px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-3xl: 1600px;
+
+    /* --breakpoint-tablet: 900px;
+    --breakpoint-wide: 1191px; */
+}
 
 
 @font-face {
@@ -59,5 +73,64 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@media (max-width: 1600px) { 
+  .sub-header{
+    max-width: 1400px;
+    padding: 0px 16px;
+  }
+  .Main-Logo div{
+    padding: 0;
+  }
+}
+@media (max-width: 1440px) { 
+  .sub-header{
+    max-width: 1100px;
+    padding: 0px 16px;
+  }
+  .Main-Logo div{
+    width: 300px;
+    height: 80px;
+  }
+  .Main-Logo div img{
+    width: 100%;
+    height: 100%;
+  }
+  .booking a{
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .nav-links-desktop a{
+    padding: 8px 14px;
+  }
+}
+@media (max-width: 1152px) { 
+  .sub-header{
+    max-width: 1000px;
+  }
+  .Main-Logo div{
+    width: 250px;
+    height: 70px;
+  }
+  .nav-links-desktop a{
+    padding: 8px 10px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 1024px) { 
+  .sub-header{
+    max-width: 900px;
+  }
+  .Main-Logo div{
+    width: 250px;
+    height: 70px;
+  }
+  .nav-links-desktop a{
+    font-size: 12px;
+  }
+  .booking a{
+    font-size: 12px;
   }
 }

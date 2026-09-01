@@ -208,9 +208,9 @@ export default function Banner() {
   );
 
   return (
-    <div ref={bannerRef} className="relative w-full h-[150vh]">
+    <div ref={bannerRef} className="relative w-full h-[150vh] ">
       {/* <Header /> */}
-      <div className="sticky top-0 z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1">
+      <div className="sticky top-0 z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1 ">
         {/* AdvancedSpineSection sits stationary BEHIND Banner (z-0) */}
         <div className="col-start-1 row-start-1 w-full h-full z-0 flex items-center justify-center bg-white">
           <AdvancedSpineSection />
@@ -225,18 +225,18 @@ export default function Banner() {
           <div className="absolute top-0 left-0 flex justify-center w-full">
             <img ref={ellipseRef} src="/banner-ellipse.png" className="object-contain scale-50" />
           </div>
-          <div className="relative w-full min-h-[720px] flex items-center justify-center">
+          <div className="relative w-full min-h-[720px] flex items-center justify-center ">
             <div className="absolute inset-0 flex flex-col justify-center z-0 pt-[120px]">
               <h1
                 ref={headingRef}
-                className="text-white text-[300px] font-Adorage font-normal leading-[180px] text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]"
+                className="text-white text-[300px] 2xl:text-[180px] font-Adorage font-normal leading-[180px] text-center 2xl:text-left drop-shadow-[0_4px_0px_#00000066]"
               >
                 MUHAMMAD
               </h1>
 
               <div
                 ref={leftTextRef}
-                className="flex flex-col text-white text-[157px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
+                className="flex flex-col text-white text-[157px] 2xl:text-[100px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
               >
                 <span>ADEEL</span>
                 <span>KHALEEL</span>
@@ -245,7 +245,7 @@ export default function Banner() {
 
             <div
               ref={mainBannerImage}
-              className="relative z-10 flex justify-center items-end h-full pt-16"
+              className="relative z-10 flex justify-center items-end h-full pt-16 2xl:pt-[20%]"
               style={{
                 clipPath: "inset(100% 0% 0% 0%)",
               }}
@@ -253,19 +253,19 @@ export default function Banner() {
               <img
                 src="/adeel-image.png"
                 alt="Dr. Muhammad Adeel Khaleel"
-                className="h-[780px] object-contain object-bottom mix-blend-screen"
+                className="h-[780px] 2xl:h-[650px] object-contain object-bottom mix-blend-screen"
               />
             </div>
 
             <div
               ref={rightTextRef}
-              className="absolute right-[50px] bottom-50 z-20 max-w-xs md:max-w-sm lg:max-w-md text-white space-y-4 pr-2 opacity-0"
+              className="absolute right-[50px] 2xl:right-0 bottom-50 2xl:bottom-10 z-20 max-w-xs md:max-w-sm 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
             >
-              <h2 className="text-[29px] font-Matangi-Bold tracking-wider uppercase">
+              <h2 className="text-[29px]  font-Matangi-Bold tracking-wider uppercase">
                 SPINE SURGERY SPECIALIST <br /> IN DALLAS
               </h2>
 
-              <p className="text-[16px] font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
+              <p className="text-[16px]  font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
                 For over a decade, Mohammed Khaleel, MD has been a respected spine surgeon in the Dallas and Fort Worth areas, specializing in minimally invasive procedures and complex deformity corrections.
               </p>
             </div>

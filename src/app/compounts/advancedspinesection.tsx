@@ -49,14 +49,14 @@ export default function AdvancedSpineSection() {
 
 
     return (
-        <section ref={sectionRef} className="relative top-0 z-10 w-full bg-white text-center advanced-spine-section">
+        <section ref={sectionRef} className="relative top-0 z-10 w-full bg-white text-center advanced-spine-section ">
             <div className="mx-auto flex flex-col items-center justify-center overflow-x-hidden py-28 px-8 md:px-12 lg:px-20">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight advanced-spine-heading"
                     style={{
                         opacity: 0
                     }}
                 >
-                    <h2 className="text-[250px] font-normal leading-[0.85]">
+                    <h2 className="text-[250px] font-normal leading-[0.85] lg:text-6xl">
                         ADVANCED
                     </h2>
                     <h3 className="text-[120px] font-normal leading-[90px]">
