@@ -296,7 +296,7 @@ export default function Services() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[850vh] sm:h-[950vh] lg:h-[600vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[850vh] sm:h-[950vh] xl:h-[600vh]">
       <div className="sticky top-0 z-10 w-full min-h-dvh overflow-hidden">
         <section
           ref={sectionRef}
@@ -317,7 +317,7 @@ export default function Services() {
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
                         <span
-                          className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[170px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
+                          className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[120px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
                         >
                           {item.id}
                         </span>
@@ -331,7 +331,7 @@ export default function Services() {
                   <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <h3 className="text-[30px] sm:text-[38px] md:text-[44px] lg:text-[52px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
+                        <h3 className="text-[30px] sm:text-[38px] md:text-[44px] lg:text-[40px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
                           whiteSpace: "pre-line"
                         }}>
                           {item.title}
@@ -346,7 +346,7 @@ export default function Services() {
                   <div ref={descriptionsWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <p className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[30px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
+                        <p className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[24px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
                           {item.description}
                         </p>
                       </div>
@@ -369,7 +369,7 @@ export default function Services() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-cover w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[500px] lg:w-[550px] lg:h-[620px] xl:w-[700px] xl:h-[750px] mt-10 lg:mt-[100px]"
+                        className="object-cover w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[500px] lg:w-[420px] lg:h-[520px] xl:w-[700px] xl:h-[750px] mt-10 lg:mt-[100px]"
                       />
                     </div>
                   </div>

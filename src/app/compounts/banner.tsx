@@ -219,24 +219,24 @@ export default function Banner() {
         {/* Banner Hero Section sits ON TOP (z-10) and slides UP to reveal AdvancedSpineSection */}
         <section
           ref={sectionRef}
-          className="col-start-1 row-start-1 relative z-10 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center xl:pl-[120px] xl:pr-[120px]"
+          className="col-start-1 row-start-1 relative z-10 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center 2xl:pl-[120px] 2xl:pr-[120px]"
           style={{ backgroundImage: "url('/banner-bg.jpg')" }}
         >
           <div className="absolute top-0 left-0 flex justify-center w-full">
             <img ref={ellipseRef} src="/banner-ellipse.png" className="object-contain w-[50%] lg:w-auto lg:scale-50" />
           </div>
-          <div className="relative max-[1024px]:w-full lg:min-h-[720px] flex items-center justify-center ">
-            <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-[120px] max-[1024px]:px-5  max-[1024px]:w-full">
+          <div className="relative w-full lg:min-h-[720px] flex items-center justify-center ">
+            <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 xl:pt-[120px] max-[1300px]:px-5  max-[1024px]:w-full">
               <h1
                 ref={headingRef}
-                className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[220px] xl:text-[260px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]"
+                className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]"
               >
                 MUHAMMAD
               </h1>
 
               <div
                 ref={leftTextRef}
-                className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[90px] xl:text-[110px] 2xl:text-[160px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
+                className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
               >
                 <span>ADEEL</span>
                 <span>KHALEEL</span>
@@ -245,7 +245,7 @@ export default function Banner() {
 
             <div
               ref={mainBannerImage}
-              className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full xl:pt-[20%]"
+              className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[8%] lg:pt-[22%]  xl:pt-[20%]"
               style={{
                 clipPath: "inset(100% 0% 0% 0%)",
               }}
@@ -253,13 +253,13 @@ export default function Banner() {
               <img
                 src="/adeel-image.png"
                 alt="Dr. Muhammad Adeel Khaleel"
-                className="h-[400px] sm:h-[550px] md:h-[700px] lg:h-[750px] object-contain object-bottom mix-blend-screen"
+                className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[900px] object-contain object-bottom mix-blend-screen"
               />
             </div>
 
             <div
               ref={rightTextRef}
-              className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-[50px] 2xl:right-0 lg:bottom-50 2xl:bottom-10 z-20 max-w-xs md:max-w-sm 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
+              className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-0 xl:right-[50px] 2xl:right-0 lg:bottom-0 2xl:bottom-50 z-20 max-w-xs  md:max-w-sm lg:max-w-xs 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
             >
               <h2 className="text-[22px] md:text-[29px] font-Matangi-Bold tracking-wider uppercase">
                 SPINE SURGERY SPECIALIST <br /> IN DALLAS

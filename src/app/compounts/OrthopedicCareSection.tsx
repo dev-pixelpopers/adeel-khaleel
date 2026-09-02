@@ -111,9 +111,9 @@ export default function OrthopedicCareSection() {
                         <div
                             key={card.id}
                             onClick={() => setActiveId(isOpen ? null : card.id)}
-                            className={`relative cursor-pointer overflow-hidden h-[80vh] lg:h-auto transition-all duration-900 ease-in-out flex flex-col justify-end  ${isOpen
+                            className={`relative cursor-pointer overflow-hidden h-[50vh] lg:h-auto lg:transition-all lg:duration-900 ease-in-out flex flex-col justify-end  ${isOpen
                                 ? "lg:w-[680px] w-full"
-                                : "lg:w-[260px] w-full hover:opacity-95"
+                                : "lg:w-[260px] w-full lg:hover:opacity-95"
                                 }`}
                         >
                             <img
@@ -123,20 +123,20 @@ export default function OrthopedicCareSection() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/0 to-transparent pointer-events-none" />
                             <div
-                                className={`relative z-10 text-left transition-all duration-900 ease-in-out pt-[30px] max-h-[200px] md:pl-[32px] px-[10px]`}
+                                className={`relative z-10 text-left lg:transition-all lg:duration-900 ease-in-out pt-[30px] max-h-[200px] md:pl-[32px] px-[10px]`}
                             >
-                                <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md duration-900 ${isOpen ? "delay-600 translate-y-[0%]" : "translate-y-[100%]"}`}>
+                                <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md lg:duration-900 ${isOpen ? "lg:delay-600 lg:translate-y-[0%]" : "lg:translate-y-[100%]"}`}>
 
                                 </div>
                                 <h4
-                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap transition-transform duration-900 ease-in origin-left ml-[20px] sm:ml-[32px] ${isOpen
-                                        ? "text-3xl md:text-[57px] leading-tight rotate-0"
-                                        : "text-[28px] md:text-[57px] -rotate-90"
+                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap lg:transition-transform lg:duration-900 lg:ease-in origin-left ml-[20px] sm:ml-[32px] ${isOpen
+                                        ? "text-[28px] md:text-[57px] leading-tight lg:rotate-0"
+                                        : "text-[28px] md:text-[57px] lg:-rotate-90"
                                         }`}
                                 >
                                     {card.title}
                                 </h4>
-                                <div className={`relative overflow-hidden w-full pl-[20px] sm:pl-[32px]  mb-[30px] ${isOpen ? "duration-900 delay-900 opacity-100" : "duration-300 opacity-0"}`} >
+                                <div className={`relative overflow-hidden w-full pl-[20px] sm:pl-[32px]  mb-[30px] ${isOpen ? "lg:duration-900 lg:delay-900 lg:opacity-100" : "lg:duration-300 lg:opacity-0"}`} >
                                     <p className="text-gray-600 font-Matangi-Regular text-base md:text-[19px] leading-relaxed max-w-2xl">
                                         {card.description}
                                     </p>

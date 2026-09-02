@@ -165,7 +165,7 @@ export default function TestimonialsSection() {
             {testimonials.map((item, index) => (
               <div
                 key={item.id}
-                className="xl:absolute h-[270px] w-[320px] md:w-[500px] md:h-[380px] lg:h-[350px] xl:w-[350px]  flex flex-col justify-between p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
+                className="xl:absolute h-[270px] w-[320px] md:w-[500px] md:h-[380px] lg:h-[350px] xl:w-[320px] xl:h-[270px]  flex flex-col justify-between p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
                 style={{
                   ...cardStyles[index],
                   background:
