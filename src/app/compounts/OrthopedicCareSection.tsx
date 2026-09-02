@@ -87,23 +87,23 @@ export default function OrthopedicCareSection() {
     return (
         <section ref={sectionRef} className="w-full bg-white pb-30 pt-30 px-6 md:px-12 select-none overflow-x-hidden">
 
-            <div className="w-full text-center mb-55 flex flex-col items-center justify-center">
+            <div className="w-full text-center mb-30 sm:mb-55 flex flex-col items-center justify-center">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">
-                    <h2 className="text-[36px] sm:text-[55px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
+                    <h2 className="text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
                         ORTHOPEDIC CARE FOR
                     </h2>
-                    <h3 className="text-[36px] sm:text-[55px] md:text-[60px] lg:text-[82px] font-normal leading-[1] mt-2">
+                    <h3 className="text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[1] mt-2">
                         NECK AND SPINE CONDITIONS
                     </h3>
                 </div>
 
-                <p ref={textRef} className="w-[85%] md:w-[73%] mt-8 md:mt-7 text-[18px] sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
+                <p ref={textRef} className="max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] mt-8 md:mt-7 text-[18px] sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
                     At Mohammed Khaleel, MD, we specialize in comprehensive care for a range of conditions affecting the neck and spine. Our expert team is dedicated to providing effective orthopedic treatments tailored to your needs. Explore our services below.
                 </p>
             </div>
 
 
-            <div className="mx-auto flex flex-col lg:flex-row gap-8 h-[550px] rounded-[8px] lg:h-[720px] w-full justify-center">
+            <div className="mx-auto flex flex-col lg:flex-row gap-8 rounded-[8px] lg:h-[720px] w-full justify-center ">
                 {conditionsData.map((card) => {
                     const isOpen = activeId === card.id;
 
@@ -111,7 +111,7 @@ export default function OrthopedicCareSection() {
                         <div
                             key={card.id}
                             onClick={() => setActiveId(isOpen ? null : card.id)}
-                            className={`relative cursor-pointer overflow-hidden transition-all duration-900 ease-in-out flex flex-col justify-end ${isOpen
+                            className={`relative cursor-pointer overflow-hidden h-[80vh] lg:h-auto transition-all duration-900 ease-in-out flex flex-col justify-end  ${isOpen
                                 ? "lg:w-[680px] w-full"
                                 : "lg:w-[260px] w-full hover:opacity-95"
                                 }`}
@@ -123,20 +123,20 @@ export default function OrthopedicCareSection() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/0 to-transparent pointer-events-none" />
                             <div
-                                className={`relative z-10 text-left transition-all duration-900 ease-in-out pt-[30px] max-h-[200px] pl-[32px]`}
+                                className={`relative z-10 text-left transition-all duration-900 ease-in-out pt-[30px] max-h-[200px] md:pl-[32px] px-[10px]`}
                             >
                                 <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md duration-900 ${isOpen ? "delay-600 translate-y-[0%]" : "translate-y-[100%]"}`}>
 
                                 </div>
                                 <h4
-                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap transition-transform duration-900 ease-in origin-left  ml-[32px] ${isOpen
+                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap transition-transform duration-900 ease-in origin-left ml-[20px] sm:ml-[32px] ${isOpen
                                         ? "text-3xl md:text-[57px] leading-tight rotate-0"
                                         : "text-[28px] md:text-[57px] -rotate-90"
                                         }`}
                                 >
                                     {card.title}
                                 </h4>
-                                <div className={`relative overflow-hidden w-full pl-[32px]  mb-[30px] ${isOpen ? "duration-900 delay-900 opacity-100" : "duration-300 opacity-0"}`} >
+                                <div className={`relative overflow-hidden w-full pl-[20px] sm:pl-[32px]  mb-[30px] ${isOpen ? "duration-900 delay-900 opacity-100" : "duration-300 opacity-0"}`} >
                                     <p className="text-gray-600 font-Matangi-Regular text-base md:text-[19px] leading-relaxed max-w-2xl">
                                         {card.description}
                                     </p>

@@ -147,34 +147,38 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[650vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[220vh] sm:h-[400vh] lg:h-[650vh]">
       <section
         ref={sectionRef}
         className="sticky top-0 w-full h-dvh bg-white py-20 overflow-hidden select-none"
       >
-        <div className="max-w-[1600px] mx-auto h-full relative flex flex-col justify-center items-center">
+        <div className="max-w-[1600px] mx-auto h-full relative flex flex-col justify-center items-center ">
           {/* Background Heading */}
-          <div className="w-full text-center flex flex-col items-center justify-center text-[#4A4A4A] font-Adorage uppercase z-0 pointer-events-none">
-            <h2 className="text-[120px] sm:text-[180px] md:text-[230px] lg:text-[270px] leading-[300px] font-normal">
+          <div className="w-full text-center flex  items-center justify-center text-[#4A4A4A] font-Adorage uppercase z-0 pointer-events-none ">
+            <h2 className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[230px] lg:leading-[300px] font-normal">
               WHAT THEY ARE SAYING
             </h2>
           </div>
 
           {/* Dynamically Positioned Testimonial Cards Stream */}
-          <div ref={cardsTrackRef} className="hidden lg:block absolute inset-0 z-10">
+          <div ref={cardsTrackRef} className=" absolute inset-0 z-10 max-[1280px]:flex flex-col gap-y-10 justify-center items-center max-[1280px]:h-max" >
             {testimonials.map((item, index) => (
               <div
                 key={item.id}
-                className="absolute w-[320px] xl:w-[350px] h-[350px] p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
+                className="xl:absolute h-[270px] w-[320px] md:w-[500px] md:h-[380px] lg:h-[350px] xl:w-[350px]  flex flex-col justify-between p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
                 style={{
                   ...cardStyles[index],
                   background:
                     "linear-gradient(180deg, #e9d9a6 0%, rgba(255, 255, 255) 101.88%)",
                 }}
               >
-                <p className="text-[#404040] font-Matangi-Regular text-[12px] leading-relaxed mb-[120px]">
+                <div >
+                <p className="text-[#404040] font-Matangi-Regular text-[14px] xl:text-[12px] md:text-xl leading-relaxed ">
                   {item.text}
                 </p>
+              </div>
+
+              <div>
 
                 <div className="flex gap-1 mb-3 text-[#0F282F]">
                   {[...Array(item.rating)].map((_, i) => (
@@ -193,7 +197,6 @@ export default function TestimonialsSection() {
                     </svg>
                   ))}
                 </div>
-
                 <div className="flex items-center gap-3">
                   <img
                     src={item.avatar}
@@ -207,6 +210,8 @@ export default function TestimonialsSection() {
                       {item.role}
                     </p>
                   </div>
+                </div>
+
                 </div>
               </div>
             ))}

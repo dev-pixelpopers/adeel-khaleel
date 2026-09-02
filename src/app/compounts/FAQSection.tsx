@@ -63,7 +63,7 @@ export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
       <div className="w-full mx-auto flex flex-col items-center">
 
         <h2
-          className={`font-Adorage uppercase text-[36px] sm:text-[50px] md:text-[82px] font-normal tracking-wide text-center leading-tight mb-12 ${
+          className={`font-Adorage uppercase text-[32px] sm:text-[45px] md:text-[60px] lg:text-[70px] xl:text-[82px] font-normal tracking-wide text-center leading-tight mb-12 ${
             isLight
               ? "text-[#545454]"
               : "text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)]"
@@ -87,7 +87,7 @@ export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
                   className="w-full flex items-center justify-between py-6 text-left focus:outline-none group cursor-pointer"
                 >
                   <span
-                    className={`font-Matangi-Medium text-xl sm:text-2xl md:text-[36px] font-normal tracking-wide pr-4 ${
+                    className={`font-Matangi-Medium text-lg sm:text-xl md:text-[30px] lg:text-[36px] font-normal tracking-wide pr-4 ${
                       isLight ? "text-[#333]" : "text-white"
                     }`}
                   >
@@ -95,7 +95,7 @@ export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
                   </span>
 
                         <svg
-                            className={`w-10 h-10 transition-transform duration-300 ease-in-out shrink-0 ${isLight ? "text-[#8E6C36]" : "text-white"} ${isOpen ? "rotate-180" : "rotate-0"
+                            className={`w-5 h-5 sm:w-8 sm:h-8 md:w-10 md:h-10 transition-transform duration-300 ease-in-out shrink-0 ${isLight ? "text-[#8E6C36]" : "text-white"} ${isOpen ? "rotate-180" : "rotate-0"
                                 }`}
                             width="12" height="12" viewBox="0 0 36 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.39258 1.43604L17.8926 17.436L34.3926 1.43604" stroke="currentColor" strokeWidth="4" />
@@ -112,7 +112,7 @@ export default function FAQSection({ variant = "dark" }: FAQSectionProps) {
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`font-Matangi-Regular text-base sm:text-lg md:text-[28px] font-light leading-relaxed pr-8 ${
+                      className={`font-Matangi-Regular text-sm sm:text-base md:text-xl lg:text-[28px] font-light leading-relaxed pr-8 ${
                         isLight ? "text-[#555555]" : "text-white/90"
                       }`}
                     >

@@ -103,7 +103,7 @@ export default function ReclaimLifeSection() {
           <div ref={sectionRef} className="relative top-0 mx-auto flex flex-col items-center justify-center z-10 pt-[80px] sm:pt-[100px] md:pt-[130px] lg:pt-[160px] xl:pt-[200px]">
             <h2
               ref={headingRef}
-              className="text-white font-Adorage uppercase text-[32px] sm:text-[46px] md:text-[60px] lg:text-[90px] xl:text-[110px] 2xl:text-[130px] max-w-[360px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1100px] xl:max-w-[1400px] font-normal leading-[1.05] drop-shadow-[0_4px_0px_#00000066]"
+              className="text-white font-Adorage uppercase text-[30px] sm:text-[46px] md:text-[56px] lg:text-[90px] xl:text-[110px] 2xl:text-[130px] max-w-[360px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1100px] xl:max-w-[1400px] 2xl:max-w-[1600px] font-normal leading-[1.05] drop-shadow-[0_4px_0px_#00000066]"
             >
               RECLAIM YOUR LIFE WITH <br className="hidden sm:block" /> ADVANCED SPINE SURGERY
             </h2>

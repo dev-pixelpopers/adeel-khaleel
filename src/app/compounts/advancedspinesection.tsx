@@ -50,20 +50,20 @@ export default function AdvancedSpineSection() {
 
     return (
         <section ref={sectionRef} className="relative top-0 z-10 w-full bg-white text-center advanced-spine-section ">
-            <div className="mx-auto flex flex-col items-center justify-center overflow-x-hidden py-28 px-8 md:px-12 lg:px-20">
+            <div className="mx-auto flex flex-col items-center justify-center overflow-x-hidden lg:py-28 sm:px-8 md:px-10 lg:px-20">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight advanced-spine-heading"
                     style={{
                         opacity: 0
                     }}
                 >
-                    <h2 className="text-[250px] font-normal leading-[0.85] lg:text-6xl">
+                    <h2 className="text-[70px] sm:text-[90px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[250px] font-normal leading-[0.85] lg:text-6xl">
                         ADVANCED
                     </h2>
-                    <h3 className="text-[120px] font-normal leading-[90px]">
+                    <h3 className="text-[40px] sm:text-[56px] md:text-[66px] lg:text-[90px] xl:text-[110px] 2xl:text-[120px] font-normal lg:leading-[90px]">
                         SPINE SOLUTIONS
                     </h3>
                 </div>
-                <p ref={textRef} className="w-[89%] mt-8 md:mt-10 text-[35px] text-[#555555] font-Matangi-Bold text-base font-normal leading-[65px] advanced-spine-paragraph"
+                <p ref={textRef} className="  max-w-[350px] sm:max-w-[600px] md:max-w-[700px] lg:w-[89%] mt-8 md:mt-10 text-xl sm:text-[28px] md:text-[30px] lg:text-[90px] xl:text-[35px] text-[#555555] font-Matangi-Bold text-base font-normal leading-[34px] md:leading-[44px] lg:leading-[65px] advanced-spine-paragraph"
                     style={{
                         opacity: 0
                     }}

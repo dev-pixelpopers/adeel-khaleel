@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-    --breakpoint-3xs: 320px;
+    /* --breakpoint-3xs: 320px;
     --breakpoint-2xs: 350px;
-    --breakpoint-xs: 428px;
+    --breakpoint-xs: 428px; */
     --breakpoint-sm: 640px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
@@ -76,7 +76,7 @@
   }
 }
 
-@media (max-width: 1600px) { 
+/* @media (max-width: 1600px) { 
   .sub-header{
     max-width: 1400px;
     padding: 0px 16px;
@@ -133,4 +133,4 @@
   .booking a{
     font-size: 12px;
   }
-}
+} */

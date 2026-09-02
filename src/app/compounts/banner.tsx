@@ -219,24 +219,24 @@ export default function Banner() {
         {/* Banner Hero Section sits ON TOP (z-10) and slides UP to reveal AdvancedSpineSection */}
         <section
           ref={sectionRef}
-          className="col-start-1 row-start-1 relative z-10 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center pl-[120px] pr-[120px]"
+          className="col-start-1 row-start-1 relative z-10 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center xl:pl-[120px] xl:pr-[120px]"
           style={{ backgroundImage: "url('/banner-bg.jpg')" }}
         >
           <div className="absolute top-0 left-0 flex justify-center w-full">
-            <img ref={ellipseRef} src="/banner-ellipse.png" className="object-contain scale-50" />
+            <img ref={ellipseRef} src="/banner-ellipse.png" className="object-contain w-[50%] lg:w-auto lg:scale-50" />
           </div>
-          <div className="relative w-full min-h-[720px] flex items-center justify-center ">
-            <div className="absolute inset-0 flex flex-col justify-center z-0 pt-[120px]">
+          <div className="relative max-[1024px]:w-full lg:min-h-[720px] flex items-center justify-center ">
+            <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-[120px] max-[1024px]:px-5  max-[1024px]:w-full">
               <h1
                 ref={headingRef}
-                className="text-white text-[300px] 2xl:text-[180px] font-Adorage font-normal leading-[180px] text-center 2xl:text-left drop-shadow-[0_4px_0px_#00000066]"
+                className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[220px] xl:text-[260px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]"
               >
                 MUHAMMAD
               </h1>
 
               <div
                 ref={leftTextRef}
-                className="flex flex-col text-white text-[157px] 2xl:text-[100px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
+                className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[90px] xl:text-[110px] 2xl:text-[160px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
               >
                 <span>ADEEL</span>
                 <span>KHALEEL</span>
@@ -245,7 +245,7 @@ export default function Banner() {
 
             <div
               ref={mainBannerImage}
-              className="relative z-10 flex justify-center items-end h-full pt-16 2xl:pt-[20%]"
+              className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full xl:pt-[20%]"
               style={{
                 clipPath: "inset(100% 0% 0% 0%)",
               }}
@@ -253,19 +253,19 @@ export default function Banner() {
               <img
                 src="/adeel-image.png"
                 alt="Dr. Muhammad Adeel Khaleel"
-                className="h-[780px] 2xl:h-[650px] object-contain object-bottom mix-blend-screen"
+                className="h-[400px] sm:h-[550px] md:h-[700px] lg:h-[750px] object-contain object-bottom mix-blend-screen"
               />
             </div>
 
             <div
               ref={rightTextRef}
-              className="absolute right-[50px] 2xl:right-0 bottom-50 2xl:bottom-10 z-20 max-w-xs md:max-w-sm 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
+              className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-[50px] 2xl:right-0 lg:bottom-50 2xl:bottom-10 z-20 max-w-xs md:max-w-sm 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
             >
-              <h2 className="text-[29px]  font-Matangi-Bold tracking-wider uppercase">
+              <h2 className="text-[22px] md:text-[29px] font-Matangi-Bold tracking-wider uppercase">
                 SPINE SURGERY SPECIALIST <br /> IN DALLAS
               </h2>
 
-              <p className="text-[16px]  font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
+              <p className="text-[16px] hidden lg:block font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
                 For over a decade, Mohammed Khaleel, MD has been a respected spine surgeon in the Dallas and Fort Worth areas, specializing in minimally invasive procedures and complex deformity corrections.
               </p>
             </div>

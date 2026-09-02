@@ -12,7 +12,7 @@ export default function Footer() {
                     <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-6">
                         Menu
                     </h3>
-                    <ul className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
+                    <ul className="space-y-7 font-Matangi-Bold text-sm sm:text-[20px] text-white/90">
                         <li><a href="/meet-the-team" className="hover:text-white transition-colors">Meet the Team</a></li>
                         <li><a href="/procedures" className="hover:text-white transition-colors">Procedures</a></li>
                         <li><a href="/pre-operation" className="hover:text-white transition-colors">Pre Operation</a></li>
@@ -32,7 +32,7 @@ export default function Footer() {
                         <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-6">
                             Social Media
                         </h3>
-                        <ul className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
+                        <ul className="space-y-7 font-Matangi-Bold text-base sm:text-[20px] text-white/90">
                             <li><a href="#" className="hover:text-white transition-colors">Linked In</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
@@ -44,7 +44,7 @@ export default function Footer() {
                         <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-4">
                             Contact
                         </h3>
-                        <div className="space-y-7 font-Matangi-Bold text-[20px] sm:text-[20px] text-white/90">
+                        <div className="space-y-7 font-Matangi-Bold text-sm sm:text-[20px] text-white/90">
                             <p>Phone : (469) 935 7775</p>
                             <p>Address : 11000 Frisco Street, Suite 200 Frisco, Texas 75033</p>
                         </div>
@@ -56,21 +56,21 @@ export default function Footer() {
 
 
                     <div>
-                        <h3 className="font-Adorage text-[28px] sm:text-[32px] mb-4">
+                        <h3 className="font-Adorage text-[28px] sm:text-[35px] mb-4">
                             Social Media
                         </h3>
-                        <p className="font-Matangi-Regular text-[14px] sm:text-[18px] leading-relaxed text-white/85 max-w-[91%]">
+                        <p className="font-Matangi-Regular text-sm sm:text-[18px] leading-relaxed text-white/85 max-w-[91%]">
                             Join our community Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan, mi id tristique finibus, risus dui pretium ante, sed finibus tellus elit eu metus. Vestibulum quis magna at turpis suscipit sodales. Praesent quis neque urna. Nulla laoreet purus nulla, a imperdiet tortor rutrum ac. Nullam vulputate nibh ac leo.
                         </p>
                     </div>
 
-                    <div className="w-full max-w-[91%] mt-25 mb-18">
+                    <div className="w-full lg:max-w-[91%] mt-25 mb-18">
                         <form className="relative border-b border-white/40 pb-2 flex items-center justify-between">
                             <input
                                 type="email"
                                 required
                                 placeholder="Subscribe email list"
-                                className="bg-transparent text-white placeholder-white/90 font-Matangi-Regular text-[18px] outline-none w-full pr-12"
+                                className="bg-transparent text-white placeholder-white/90 font-Matangi-Regular text-base md:text-[18px] outline-none w-full pr-12"
                             />
                             <button
                                 type="submit"
@@ -88,13 +88,13 @@ export default function Footer() {
                                 </svg>
                             </button>
                         </form>
-                        <p className="text-[14px] text-end juntify-end text-white mt-8 font-Matangi-Regular">
+                        <p className="text-[14px] md:text-lg lg:text-[14px] text-center lg:text-end juntify-end text-white mt-8 font-Matangi-Regular">
                             By subscribing you agree to the Privacy Policy
                         </p>
                     </div>
 
 
-                    <div className="flex flex-wrap items-center gap-3 pt-2">
+                    <div className="flex flex-wrap items-center gap-3 pt-2 max-[1024px]:justify-center">
                         <div className="rounded flex items-center justify-center h-14">
                             <img src="/footer-logo (5).png" alt="American Academy of Orthopaedic Surgeons" className="w-full h-full object-cover" />
                         </div>
@@ -121,7 +121,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-[1440px] mx-auto pt-6 text-center">
-                <p className="text-[14px] font-Matangi-Regular text-white/80">
+                <p className="text-[12px] md:text-xl font-Matangi-Regular text-white/80">
                     © 2026, Mohammed Khaleel, MD. All Rights Reserved.
                 </p>
             </div>
