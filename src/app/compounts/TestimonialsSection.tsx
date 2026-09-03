@@ -147,7 +147,7 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[150vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[400vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
       <section
         ref={sectionRef}
         className="sticky top-0 w-full h-dvh bg-white py-20 overflow-hidden select-none"
@@ -161,7 +161,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Dynamically Positioned Testimonial Cards Stream */}
-          <div ref={cardsTrackRef} className=" absolute inset-0 z-10 max-[1280px]:flex flex-col gap-y-10 justify-center items-center max-[1280px]:h-max" >
+          <div ref={cardsTrackRef} className=" absolute inset-0 z-10 max-[1280px]:flex flex-col gap-y-10 justify-center items-center max-[1280px]:max-h-[650vh]" >
             {testimonials.map((item, index) => (
               <div
                 key={item.id}

@@ -85,7 +85,7 @@ export default function OrthopedicCareSection() {
     );
 
     return (
-        <section ref={sectionRef} className="w-full bg-white pb-30 pt-30 px-6 md:px-12 select-none overflow-x-hidden">
+        <section ref={sectionRef} className="w-full bg-white py-20 lg:py-30 px-6 md:px-12 select-none overflow-x-hidden">
 
             <div className="w-full text-center mb-30 sm:mb-55 flex flex-col items-center justify-center">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">

@@ -43,6 +43,7 @@ export default function Services() {
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
   const reclaimWrapperRef = useRef<HTMLDivElement>(null);
 
+
   useGSAP(
     () => {
       if (
@@ -296,11 +297,11 @@ export default function Services() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[850vh] sm:h-[950vh] xl:h-[600vh]">
-      <div className="sticky top-0 z-10 w-full min-h-dvh overflow-hidden">
+    <div ref={outerContainerRef} className="relative w-full h-[350vh] sm:h-[950vh] xl:h-[600vh]">
+      <div className="sticky top-25 lg:top-0 z-10 w-full min-h-dvh overflow-hidden">
         <section
           ref={sectionRef}
-          className="relative w-full h-full bg-white pt-25 sm:pt-30 md:pt-35 lg:pt-10 flex items-end flex-col"
+          className="relative w-full h-full bg-white sm:pt-30 md:pt-35 lg:pt-10 flex items-end flex-col"
         >
           <div
             className="relative w-full mx-auto flex flex-row gap-6 pl-5 pr-5 pt-5 md:gap-10 md:pl-10 md:pr-10 lg:gap-16 lg:pl-16 lg:pr-10 xl:gap-24 xl:pl-[140px] xl:pr-0">

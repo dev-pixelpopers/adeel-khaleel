@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Banner() {
   const bannerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const leftTextRef = useRef<HTMLDivElement>(null);
   const rightTextRef = useRef<HTMLDivElement>(null);
@@ -160,16 +160,16 @@ export default function Banner() {
         );
       }
 
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bannerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1.2,
-        },
-      });
+      // const scrollTl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: bannerRef.current,
+      //     start: "top top",
+      //     end: "bottom bottom",
+      //     scrub: 1.2,
+      //   },
+      // });
 
-      scrollTl
+      // scrollTl
       // .to(
       //   headerEl,
       //   {
@@ -179,13 +179,14 @@ export default function Banner() {
       //     ease: "power2.out",
       //   }
       // )
-        .to(
-          sectionRef.current,
-          {
-            yPercent: -100,
-            ease: "none",
-          }
-        )
+        // .to(
+        //   sectionRef.current,
+        //   {
+        //     yPercent: -100,
+        //     duration: 3,
+        //     ease: "power2.out",
+        //   }
+        // )
         // .to(
         //   headerEl,
         //   {
@@ -208,70 +209,59 @@ export default function Banner() {
   );
 
   return (
-    <div ref={bannerRef} className="relative w-full h-[110vh] lg:h-[150vh] ">
-      {/* <Header /> */}
-      <div className="sticky top-0 z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1 ">
-        {/* AdvancedSpineSection sits stationary BEHIND Banner (z-0) */}
-        <div className="col-start-1 row-start-1 w-full h-full z-0 flex md:mt-0 items-end lg:items-center justify-center ">
-          <AdvancedSpineSection />
+    /* Outer container defines the 200vh scroll track */
+    <div ref={bannerRef} className="relative w-full min-h-[200vh]">
+      
+      {/* SECTION 2 (REVEALED): Locked to top of viewport behind Section 1 */}
+      <AdvancedSpineSection />
+
+      {/* SECTION 1 (BANNER): Sits on top (z-10) and pulls up over Section 2 initially */}
+      <section 
+       ref={sectionRef}
+        className="relative z-10 w-full h-dvh lg:h-dvh bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center 2xl:px-[120px] -mt-[100vh]"
+        style={{ backgroundImage: "url('/banner-bg.jpg')" }}
+      >
+        <div className="absolute top-0 left-0 flex justify-center w-full">
+
+          <img ref={ellipseRef}
+            src="/banner-ellipse.png" 
+            alt="Ellipse"
+            className="object-contain w-[50%] lg:w-auto lg:scale-50" 
+          />
         </div>
 
-        {/* Banner Hero Section sits ON TOP (z-10) and slides UP to reveal AdvancedSpineSection */}
-        <section
-          ref={sectionRef}
-          className="col-start-1 row-start-1 relative z-10 w-full lg:h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center 2xl:pl-[120px] 2xl:pr-[120px]"
-          style={{ backgroundImage: "url('/banner-bg.jpg')" }}
-        >
-          <div className="absolute top-0 left-0 flex justify-center w-full">
-            <img ref={ellipseRef} src="/banner-ellipse.png" className="object-contain w-[50%] lg:w-auto lg:scale-50" />
-          </div>
-          <div className="relative w-full lg:min-h-[720px] flex items-center justify-center ">
-            <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 xl:pt-[120px] max-[1300px]:px-5  max-[1024px]:w-full">
-              <h1
-                ref={headingRef}
-                className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center lg:text-left drop-shadow-[0_4px_0px_#00000066]"
-              >
-                MUHAMMAD
-              </h1>
+        <div className="relative w-full lg:min-h-[720px] flex items-center justify-center">
+          <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 xl:pt-[120px] max-[1300px]:px-5 max-[1024px]:w-full">
+            <h1 ref={headingRef} className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center drop-shadow-[0_4px_0px_#00000066]">
+              MUHAMMAD
+            </h1>
 
-              <div
-                ref={leftTextRef}
-                className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]"
-              >
-                <span>ADEEL</span>
-                <span>KHALEEL</span>
-              </div>
-            </div>
-
-            <div
-              ref={mainBannerImage}
-              className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[8%] lg:pt-[22%]  xl:pt-[20%]"
-              style={{
-                clipPath: "inset(100% 0% 0% 0%)",
-              }}
-            >
-              <img
-                src="/adeel-image.png"
-                alt="Dr. Muhammad Adeel Khaleel"
-                className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
-              />
-            </div>
-
-            <div
-              ref={rightTextRef}
-              className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-0 xl:right-[50px] 2xl:right-0 lg:bottom-0 2xl:bottom-50 z-20 max-w-xs  md:max-w-sm lg:max-w-xs 2xl:max-w-md text-white space-y-4 pr-2 opacity-0"
-            >
-              <h2 className="text-[22px] md:text-[29px] font-Matangi-Bold tracking-wider uppercase">
-                SPINE SURGERY SPECIALIST <br /> IN DALLAS
-              </h2>
-
-              <p className="text-[16px] hidden lg:block font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
-                For over a decade, Mohammed Khaleel, MD has been a respected spine surgeon in the Dallas and Fort Worth areas, specializing in minimally invasive procedures and complex deformity corrections.
-              </p>
+            <div ref={leftTextRef} className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]">
+              <span>ADEEL</span>
+              <span>KHALEEL</span>
             </div>
           </div>
-        </section>
-      </div>
+
+          <div ref={mainBannerImage} className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[8%] lg:pt-[22%] xl:pt-[20%]">
+            <img
+              src="/adeel-image.png"
+              alt="Dr. Muhammad Adeel Khaleel"
+              className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
+            />
+          </div>
+
+          <div ref={rightTextRef} className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-0 xl:right-[50px] 2xl:right-0 lg:bottom-0 2xl:bottom-50 z-20 max-w-xs md:max-w-sm lg:max-w-xs 2xl:max-w-md text-white space-y-4 pr-2">
+            <h2 className="text-[22px] md:text-[29px] font-Matangi-Bold tracking-wider uppercase ">
+              SPINE SURGERY SPECIALIST <br /> IN DALLAS
+            </h2>
+
+            <p className="text-[16px] hidden lg:block font-Matangi-Regular text-white/90 leading-relaxed tracking-wide">
+              For over a decade, Mohammed Khaleel, MD has been a respected spine surgeon in the Dallas and Fort Worth areas, specializing in minimally invasive procedures and complex deformity corrections.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
