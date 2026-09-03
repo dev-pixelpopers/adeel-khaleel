@@ -208,18 +208,18 @@ export default function Banner() {
   );
 
   return (
-    <div ref={bannerRef} className="relative w-full h-[150vh] ">
+    <div ref={bannerRef} className="relative w-full h-[110vh] lg:h-[150vh] ">
       {/* <Header /> */}
       <div className="sticky top-0 z-10 w-full h-dvh overflow-hidden grid grid-cols-1 grid-rows-1 ">
         {/* AdvancedSpineSection sits stationary BEHIND Banner (z-0) */}
-        <div className="col-start-1 row-start-1 w-full h-full z-0 flex items-center justify-center bg-white">
+        <div className="col-start-1 row-start-1 w-full h-full z-0 flex md:mt-0 items-end lg:items-center justify-center ">
           <AdvancedSpineSection />
         </div>
 
         {/* Banner Hero Section sits ON TOP (z-10) and slides UP to reveal AdvancedSpineSection */}
         <section
           ref={sectionRef}
-          className="col-start-1 row-start-1 relative z-10 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center 2xl:pl-[120px] 2xl:pr-[120px]"
+          className="col-start-1 row-start-1 relative z-10 w-full lg:h-full bg-cover bg-center bg-no-repeat overflow-hidden flex items-end justify-center 2xl:pl-[120px] 2xl:pr-[120px]"
           style={{ backgroundImage: "url('/banner-bg.jpg')" }}
         >
           <div className="absolute top-0 left-0 flex justify-center w-full">
@@ -253,7 +253,7 @@ export default function Banner() {
               <img
                 src="/adeel-image.png"
                 alt="Dr. Muhammad Adeel Khaleel"
-                className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[900px] object-contain object-bottom mix-blend-screen"
+                className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
               />
             </div>
 

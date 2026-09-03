@@ -147,7 +147,7 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[220vh] sm:h-[400vh] lg:h-[650vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[150vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
       <section
         ref={sectionRef}
         className="sticky top-0 w-full h-dvh bg-white py-20 overflow-hidden select-none"

@@ -49,8 +49,8 @@ export default function AdvancedSpineSection() {
 
 
     return (
-        <section ref={sectionRef} className="relative top-0 z-10 w-full bg-white text-center advanced-spine-section ">
-            <div className="mx-auto flex flex-col items-center justify-center overflow-x-hidden py-10 lg:py-28 sm:px-8 md:px-10 lg:px-20">
+        <section ref={sectionRef} className="relative top-0 z-10 w-full text-center advanced-spine-section ">
+            <div className="mx-auto flex flex-col items-center justify-center overflow-x-hidden pt-10 lg:pt-28 sm:px-8 md:px-10 lg:px-20">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight advanced-spine-heading"
                     style={{
                         opacity: 0
