@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[url('/footer-bg.png')] bg-cover bg-center bg-no-repeat text-white pt-16 pb-6 px-6 sm:px-12 lg:px-20 relative select-none">
 
-            <div className="max-w-[1680px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-0 border-b border-white/10 3xs:pb-12 lg:pb-0 xl:pb-12">
+            <div className="max-w-[1680px] mx-auto grid grid-rows-1 lg:grid-cols-12 gap-10 lg:gap-0 border-b border-white/10 3xs:pb-12 lg:pb-0 xl:pb-12">
 
                 <div className="lg:col-span-3 lg:pr-8 flex flex-col justify-start">
                     <h3 className="font-Adorage text-[28px] sm:text-4xl min-[900px]:text-5xl lg:text-4xl mb-6">

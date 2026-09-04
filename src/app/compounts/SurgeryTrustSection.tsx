@@ -44,7 +44,7 @@ export default function SurgeryTrustSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-20 px-6 md:px-12 select-none"
+      className="w-full bg-white py-20 px-6 md:px-12 select-none z-0"
     >
       <div className="max-w-[1200px] mx-auto text-center">
         <h2 className="text-[#545454] font-Adorage uppercase text-[32px] sm:text-[48px] md:text-[58px] font-normal leading-tight tracking-tight">

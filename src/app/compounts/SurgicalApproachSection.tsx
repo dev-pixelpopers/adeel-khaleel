@@ -60,7 +60,7 @@ export default function SurgicalApproachSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-20 px-6 md:px-12 select-none overflow-x-hidden"
+      className="w-full bg-white py-20 px-6 md:px-12 select-none overflow-x-hidden z-0"
     >
       <div
         ref={headingRef}

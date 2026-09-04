@@ -58,7 +58,7 @@ export default function SurgicalProcessSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-20 px-6 md:px-12 select-none"
+      className="w-full py-20 px-6 md:px-12 select-none z-0"
       style={{
         background: "linear-gradient(180deg, #ffffff 0%, #f9f5e9 100%)",
       }}

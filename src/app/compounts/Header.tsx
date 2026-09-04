@@ -109,7 +109,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 px-3  min-[900px]:px-6 lg:px-6 py-6 header opacity-0 ">
       <div className="sub-header max-w-[1680px] lg:mx-auto flex items-center justify-between rounded-full border border-white/20 bg-[#545454]/40 px-3 min-[900px]:px-8 lg:pr-6 xl:px-4  backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.15)]">
         <a href="/" className="flex items-center gap-3 shrink-0 Main-Logo">
-          <div className="h-[60px] 2xs:h-[70px] xs:h-[75px] md:h-[100px] min-[900px]:h-[120px] lg:h-[100px] lg:w-[265px] 2xl:h-[110px] 2xl:w-[400px] items-center justify-center xl:p-2 py-2 md:py-3 ">
+          <div className="h-[60px] 2xs:h-[70px] xs:h-[75px] md:h-[100px] min-[900px]:h-[120px] lg:h-[100px] lg:w-[265px] xl:h-[100px] xl:w-[340px] 3xl:h-[110px] 2xl:w-[400px] items-center justify-center xl:p-2 py-2 md:py-3 ">
             <img
               src="/logo.png"
               alt="Mohammed Khaleel MD Logo"
@@ -127,7 +127,7 @@ export default function Header() {
             <a
               key={index}
               href={item.href}
-              className="text-white font-Matangi-Bold text-[16px] lg:text-sm 2xl:text-lg font-medium px-6 py-2.5 rounded-full transition-all duration-300 hover:bg-white/15"
+              className="text-white font-Matangi-Bold text-[16px] lg:text-sm xl:text-lg font-medium px-6 py-2.5 rounded-full transition-all duration-300 hover:bg-white/15"
             >
               {item.name}
             </a>

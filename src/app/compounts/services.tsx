@@ -304,7 +304,7 @@ export default function Services() {
           className="relative w-full h-full bg-white sm:pt-30 md:pt-35 lg:pt-10 flex items-end flex-col"
         >
           <div
-            className="relative w-full mx-auto flex flex-row gap-6 pl-5 pr-5 pt-5 md:gap-10 md:pl-10 md:pr-10 lg:gap-16 lg:pl-16 lg:pr-10 xl:gap-24 xl:pl-[140px] xl:pr-0">
+            className="relative w-full mx-auto flex flex-row gap-6 pl-5 pr-5 pt-5 md:gap-10 md:pl-10 md:pr-10 lg:gap-16 lg:pl-16 lg:pr-10 xl:gap-24 2xl:pl-[140px] xl:pr-0">
             <div className="absolute bottom-0 h-[80%] left-0 w-full" style={{
               background:
                 "linear-gradient(-90deg,rgba(84, 84, 84, 0.2) 0%, rgba(219, 236, 239, 0) 77.88%)",
@@ -313,7 +313,7 @@ export default function Services() {
             <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[150px]">
               <div className="w-full lg:w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
-                <div className="overflow-hidden w-[140px] sm:w-[160px] md:w-[180px] min-[900px]:w-[250px] lg:w-[200px] xl:w-[250px]">
+                <div className="overflow-hidden w-[140px] sm:w-[160px] md:w-[180px] min-[900px]:w-[250px] lg:w-[200px] xl:w-[250px] 3xl:w-[210px]">
                   <div ref={numbersWrapperRef} className="flex flex-row w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
@@ -328,7 +328,7 @@ export default function Services() {
                 </div>
 
                 {/* Titles vertical track */}
-                <div className="overflow-hidden h-[100px] xs:h-[120px] sm:h-[150px] md:h-[170px] min-[900px]:h-[180px] lg:h-[190px] xl:h-[210px] w-full">
+                <div className="overflow-hidden h-[100px] xs:h-[120px] sm:h-[150px] md:h-[170px] min-[900px]:h-[180px] lg:h-[190px] xl:h-[280px] w-full">
                   <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">

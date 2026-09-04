@@ -79,7 +79,7 @@ export default function ContactCTASection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-20 md:py-28 px-6 md:px-12 select-none"
+      className="w-full py-20 md:py-28 px-6 md:px-12 select-none z-0"
       style={{
         background: "linear-gradient(180deg, #FAF6EB 0%, #FFFFFF 100%)",
       }}
