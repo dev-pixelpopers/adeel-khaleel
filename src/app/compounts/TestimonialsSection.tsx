@@ -147,15 +147,15 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full 3xs:h-[250vh] xs:h-[400vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
+    <div ref={outerContainerRef} className="relative w-full h-[250vh] xs:h-[300vh] min-[500px]:h-[140vh] sm:h-[200vh] md:h-[300vh] lg:h-[450vh] xl:h-[650vh]">
       <section
         ref={sectionRef}
         className="sticky top-0 w-full h-dvh bg-white py-20 overflow-hidden select-none"
       >
-        <div className="max-w-[1600px] mx-auto h-full relative flex flex-col justify-center items-center ">
+        <div className="max-w-[1600px] mx-auto h-full relative flex flex-col justify-center items-center md:px-5 lg:px-0">
           {/* Background Heading */}
           <div className="w-full text-center flex  items-center justify-center text-[#4A4A4A] font-Adorage uppercase z-0 pointer-events-none ">
-            <h2 className="text-[80px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[230px] lg:leading-[300px] font-normal">
+            <h2 className="text-[50px] xs:text-[70px] sm:text-[120px] md:text-[150px] lg:text-[180px] xl:text-[230px] lg:leading-[300px] font-normal">
               WHAT THEY ARE SAYING
             </h2>
           </div>

@@ -231,27 +231,27 @@ export default function Banner() {
         </div>
 
         <div className="relative w-full lg:min-h-[720px] flex items-center justify-center">
-          <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 xl:pt-[120px] max-[1300px]:px-5 max-[1024px]:w-full">
-            <h1 ref={headingRef} className="text-white text-left text-[45px] 3xs:text-[50px] 2xs:text-[70px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center drop-shadow-[0_4px_0px_#00000066]">
+          <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 min-[900px]:pl-10 lg:pl-0 xl:pt-[120px] max-[1300px]:px-5 max-[1024px]:w-full">
+            <h1 ref={headingRef} className="text-white text-left text-[45px] 3xs:text-[50px] 2xs:text-[65px] min-[500px]:text-[84px] sm:text-[80px] md:text-[120px] min-[900px]:text-[150px] lg:text-[174px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center drop-shadow-[0_4px_0px_#00000066]">
               MUHAMMAD
             </h1>
 
-            <div ref={leftTextRef} className="flex flex-col text-white text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]">
+            <div ref={leftTextRef} className="flex flex-col text-white text-2xl 2xs:text-[28px] xs:text-[32px] min-[500px]:text-[40px] sm:text-[46px] md:text-[70px] min-[900px]:text-[75px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 xl:pl-1 drop-shadow-[0_4px_0px_#00000066]">
               <span>ADEEL</span>
               <span>KHALEEL</span>
             </div>
           </div>
 
-          <div ref={mainBannerImage} className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[4%] xs:pt-[8%] lg:pt-[22%] xl:pt-[20%]">
+          <div ref={mainBannerImage} className="relative z-10 flex justify-end w-full min-[1100px]:justify-center items-end h-full min-[900px]:ml-[-16%] lg:ml-[-0%] pt-[12%] 3xs:pt-[4%] xs:pt-[8%] lg:pt-[80%] xl:pt-[20%]">
             <img
               src="/adeel-image.png"
               alt="Dr. Muhammad Adeel Khaleel"
-              className="h-[500px] 3xs:h-[550px] sm:h-[600px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
+              className="h-[500px] 3xs:h-[550px] min-[500px]:h-[500px] sm:h-[600px] md:h-[700px] min-[900px]:h-[900px] lg:h-[850px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
             />
           </div>
 
-          <div ref={rightTextRef} className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-0 xl:right-[50px] 2xl:right-0 lg:bottom-0 2xl:bottom-50 z-20 max-w-xs md:max-w-sm lg:max-w-xs 2xl:max-w-md text-white space-y-4 pr-2">
-            <h2 className="text-[22px] md:text-[29px] font-Matangi-Bold tracking-wider uppercase ">
+          <div ref={rightTextRef} className="absolute max-[1024px]:left-5 bottom-0 md:bottom-10 lg:right-0 xl:right-[50px] 2xl:right-0 lg:bottom-20 2xl:bottom-50 z-20 max-w-xs md:max-w-sm lg:max-w-xs 2xl:max-w-md text-white space-y-4 pr-2">
+            <h2 className="text-[22px] md:text-3xl min-[900px]:text-[38px] lg:text-3xl font-Matangi-Bold tracking-wider uppercase ">
               SPINE SURGERY SPECIALIST <br /> IN DALLAS
             </h2>
 

@@ -85,25 +85,25 @@ export default function OrthopedicCareSection() {
     );
 
     return (
-        <section ref={sectionRef} className="w-full bg-white py-20 lg:py-30 px-6 md:px-12 select-none overflow-x-hidden">
+        <section ref={sectionRef} className="w-full bg-white py-20 min-[900px]:py-30 px-6 md:px-12 select-none overflow-x-hidden">
 
             <div className="w-full text-center mb-30 sm:mb-55 flex flex-col items-center justify-center">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">
-                    <h2 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
+                    <h2 className="text-2xl 2xs:text-[28px] xs:text-[32px] min-[500px]:text-[42px] sm:text-[45px] md:text-[60px] min-[900px]:text-[77px] lg:text-[82px] font-normal leading-[0.95]">
                         ORTHOPEDIC CARE FOR
                     </h2>
-                    <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal xs:leading-[1] mt-2">
+                    <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] min-[500px]:text-[42px] sm:text-[45px] md:text-[60px] min-[900px]:text-[77px] lg:text-[82px] font-normal xs:leading-[1] mt-2">
                         NECK AND SPINE CONDITIONS
                     </h3>
                 </div>
 
-                <p ref={textRef} className="max-w-[280px] 2xs:max-w-[320px] xs:max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] mt-8 md:mt-7 text-sm 2xs:text-base xs:text-lg sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
+                <p ref={textRef} className="max-w-[280px] 2xs:max-w-[320px] xs:max-w-[350px] min-[500px]:max-w-[480px] sm:max-w-[500px] md:max-w-[600px] min-[900px]:max-w-[770px] lg:max-w-[800px] xl:max-w-[1000px] mt-8 md:mt-7 text-sm 2xs:text-base xs:text-lg sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
                     At Mohammed Khaleel, MD, we specialize in comprehensive care for a range of conditions affecting the neck and spine. Our expert team is dedicated to providing effective orthopedic treatments tailored to your needs. Explore our services below.
                 </p>
             </div>
 
 
-            <div className="mx-auto flex flex-col lg:flex-row gap-8 rounded-[8px] lg:h-[720px] w-full justify-center ">
+            <div className="mx-auto flex flex-col lg:flex-row gap-8 h-full rounded-[8px] lg:h-[720px] w-full justify-center min-[500px]:px-10 sm:px-0">
                 {conditionsData.map((card) => {
                     const isOpen = activeId === card.id;
 
@@ -112,8 +112,8 @@ export default function OrthopedicCareSection() {
                             key={card.id}
                             onClick={() => setActiveId(isOpen ? null : card.id)}
                             className={`relative cursor-pointer overflow-hidden h-full transition-all duration-500 lg:duration-900 ease-in-out flex flex-col justify-end rounded-lg lg:rounded-none  ${isOpen
-                                ? "3xs:h-[42vh] 2xs:h-[50vh] lg:h-full lg:w-[680px] w-full "
-                                : "3xs:h-[12vh] 2xs:h-[18vh] lg:h-full lg:w-[260px] w-full lg:hover:opacity-95"
+                                ? "h-[35vh] 3xs:h-[42vh] 2xs:h-[50vh] md:h-[70vh] lg:h-full lg:w-[680px] w-full "
+                                : "h-[7vh] 3xs:h-[12vh] 2xs:h-[18vh] md:h-[30vh] lg:h-full lg:w-[260px] w-full lg:hover:opacity-95"
                                 }`}
                         >
                             <img
@@ -123,7 +123,7 @@ export default function OrthopedicCareSection() {
                             />
                             <div className="absolute inset-0 lg:bg-gradient-to-r from-white/95 via-white/0 to-transparent pointer-events-none" />
                             <div
-                                className={`relative z-10 text-left 3xs:transition-all 3xs:duration-400  ${isOpen ? "3xs:delay-600 3xs:translate-y-[0%] 3xs:pt-[20px] lg:pt-0" : "3xs:translate-y-[75%] 2xs:translate-y-[70%] lg:translate-y-[0%] 3xs:pt-[4px] lg:pt-0"} lg:transition-all lg:duration-900 ease-in-out lg:pt-[30px] max-h-[200px] md:pl-[32px] lg:px-[10px]`}
+                                className={`relative z-10 text-left transition-all duration-400  ${isOpen ? " translate-y-[0%] pt-[20px] lg:pt-0" : "translate-y-[75%] 2xs:translate-y-[70%] md:translate-y-[60%] lg:translate-y-[0%] pt-[4px] lg:pt-0"} lg:transition-all lg:duration-900 ease-in-out lg:pt-[30px] max-h-[200px] md:pl-[32px] lg:px-[10px]`}
                             >
                                 <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md duration-900 ${isOpen ? "lg:delay-600 lg:translate-y-[0%]" : "lg:translate-y-[100%]"}`}>
 
@@ -136,7 +136,7 @@ export default function OrthopedicCareSection() {
                                 >
                                     {card.title}
                                 </h4>
-                                <div className={`relative overflow-hidden w-full 3xs:pl-[10px] xs:pl-[20px] sm:pl-[32px] mb-[10px] lg:mb-[30px] ${isOpen ? "lg:duration-900 lg:delay-900 lg:opacity-100" : "lg:duration-300 lg:opacity-0"}`} >
+                                <div className={`relative overflow-hidden w-full pl-[10px] xs:pl-[20px] sm:pl-[32px] mb-[10px] lg:mb-[30px] ${isOpen ? "lg:duration-900 lg:delay-900 lg:opacity-100" : "lg:duration-300 lg:opacity-0"}`} >
                                     <p className="text-gray-600 font-Matangi-Regular text-sm xs:text-base md:text-[19px] leading-relaxed max-w-2xl">
                                         {card.description}
                                     </p>

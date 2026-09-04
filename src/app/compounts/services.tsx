@@ -297,8 +297,8 @@ export default function Services() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[350vh] sm:h-[950vh] xl:h-[600vh]">
-      <div className="sticky top-25 lg:top-0 z-10 w-full min-h-dvh overflow-hidden">
+    <div ref={outerContainerRef} className="relative w-full h-[350vh] min-[500px]:h-[430vh] sm:h-[950vh] xl:h-[600vh]">
+      <div className="sticky top-25 md:top-0 lg:top-10 xl:top-0 z-10 w-full min-h-dvh overflow-hidden">
         <section
           ref={sectionRef}
           className="relative w-full h-full bg-white sm:pt-30 md:pt-35 lg:pt-10 flex items-end flex-col"
@@ -313,12 +313,12 @@ export default function Services() {
             <div className="relative w-full flex flex-col lg:flex-row items-center justify-between mb-[150px]">
               <div className="w-full lg:w-1/2 flex flex-col justify-center pr-0 lg:pr-8 z-10">
                 {/* Numbers horizontal track */}
-                <div className="overflow-hidden w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] xl:w-[250px]">
+                <div className="overflow-hidden w-[140px] sm:w-[160px] md:w-[180px] min-[900px]:w-[250px] lg:w-[200px] xl:w-[250px]">
                   <div ref={numbersWrapperRef} className="flex flex-row w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
                         <span
-                          className="text-[75px] 2xs:text-[90px] xs:text-[100px] sm:text-[120px] md:text-[140px] lg:text-[120px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
+                          className="text-[75px] 2xs:text-[90px] xs:text-[100px] sm:text-[120px] md:text-[140px] min-[900px]:text-[170px] lg:text-[120px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
                         >
                           {item.id}
                         </span>
@@ -328,11 +328,11 @@ export default function Services() {
                 </div>
 
                 {/* Titles vertical track */}
-                <div className="overflow-hidden h-[100px] xs:h-[120px] sm:h-[150px] md:h-[170px] lg:h-[190px] xl:h-[210px] w-full">
+                <div className="overflow-hidden h-[100px] xs:h-[120px] sm:h-[150px] md:h-[170px] min-[900px]:h-[180px] lg:h-[190px] xl:h-[210px] w-full">
                   <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[38px] md:text-[44px] lg:text-[40px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
+                        <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[38px] md:text-[44px] min-[900px]:text-[50px] lg:text-[40px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
                           whiteSpace: "pre-line"
                         }}>
                           {item.title}
@@ -347,7 +347,7 @@ export default function Services() {
                   <div ref={descriptionsWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <p className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
+                        <p className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl min-[900px]:text-3xl lg:text-[24px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
                           {item.description}
                         </p>
                       </div>
@@ -370,7 +370,7 @@ export default function Services() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="object-cover w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[500px] lg:w-[420px] lg:h-[520px] xl:w-[700px] xl:h-[750px] mt-10 lg:mt-[100px]"
+                        className="object-cover w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[500px] min-[900px]:w-[450px] min-[900px]:h-[620px] lg:w-[420px] lg:h-[520px] xl:w-[700px] xl:h-[750px] mt-10 lg:mt-[100px]"
                       />
                     </div>
                   </div>

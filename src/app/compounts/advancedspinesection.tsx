@@ -59,14 +59,14 @@ export default function AdvancedSpineSection() {
                             opacity: 0
                         }}
                     >
-                        <h2 className="text-[55px] 3xs:text-[60px] xs:text-[70px] sm:text-[90px] md:text-[120px] lg:text-[140px] xl:text-[200px] 2xl:text-[250px] font-normal leading-[0.85] lg:text-6xl">
+                        <h2 className="text-[55px] 3xs:text-[60px] xs:text-[70px] min-[500px]:text-[80px] sm:text-[90px] md:text-[120px] min-[900px]:text-[130px] lg:text-[140px] xl:text-[200px] 2xl:text-[250px] font-normal leading-[0.85] lg:text-6xl">
                             ADVANCED
                         </h2>
-                        <h3 className="text-[30px] 3xs:text-[35px] xs:text-[40px] sm:text-[56px] md:text-[66px] lg:text-[80px] xl:text-[110px] 2xl:text-[120px] font-normal lg:leading-[90px]">
+                        <h3 className="text-[30px] 3xs:text-[35px] xs:text-[40px] min-[500px]:text-[50px] sm:text-[56px] md:text-[66px] min-[900px]:text-[74px] lg:text-[80px] xl:text-[110px] 2xl:text-[120px] font-normal lg:leading-[90px]">
                             SPINE SOLUTIONS
                         </h3>
                     </div>
-                    <p ref={textRef} className=" max-w-[280px] 3xs:max-w-[350px] xs:max-w-[350px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[850px] xl:max-w-[89%] mt-8 md:mt-10 text-base 2xs:text-lg xs:text-xl sm:text-[28px] md:text-[30px] xl:text-[35px] text-[#555555] font-Matangi-Bold font-normal leading-[34px] md:leading-[44px] xl:leading-[65px] advanced-spine-paragraph"
+                    <p ref={textRef} className=" max-w-[280px] 3xs:max-w-[350px] xs:max-w-[350px] min-[500px]:max-w-[480px] sm:max-w-[600px] md:max-w-[700px] min-[900px]:max-w-[800px] lg:max-w-[850px] xl:max-w-[89%] mt-8 md:mt-10 text-base 2xs:text-lg xs:text-xl sm:text-[28px] md:text-[30px] xl:text-[35px] text-[#555555] font-Matangi-Bold font-normal leading-[34px] md:leading-[44px] xl:leading-[65px] advanced-spine-paragraph"
                         style={{
                             opacity: 0
                         }}
