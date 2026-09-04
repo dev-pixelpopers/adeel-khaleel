@@ -232,21 +232,21 @@ export default function Banner() {
 
         <div className="relative w-full lg:min-h-[720px] flex items-center justify-center">
           <div className="absolute top-0 lg:inset-0 flex flex-col justify-start lg:justify-center z-0 lg:pt-2 xl:pt-[120px] max-[1300px]:px-5 max-[1024px]:w-full">
-            <h1 ref={headingRef} className="text-white text-left text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center drop-shadow-[0_4px_0px_#00000066]">
+            <h1 ref={headingRef} className="text-white text-left text-[45px] 3xs:text-[50px] 2xs:text-[70px] sm:text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[300px] font-Adorage font-normal lg:leading-[180px] lg:text-center drop-shadow-[0_4px_0px_#00000066]">
               MUHAMMAD
             </h1>
 
-            <div ref={leftTextRef} className="flex flex-col text-white text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]">
+            <div ref={leftTextRef} className="flex flex-col text-white text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[46px] md:text-[70px] lg:text-[70px] xl:text-[100px] 2xl:text-[140px] font-Matangi-Light leading-[0.95] mt-4 pl-1 drop-shadow-[0_4px_0px_#00000066]">
               <span>ADEEL</span>
               <span>KHALEEL</span>
             </div>
           </div>
 
-          <div ref={mainBannerImage} className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[8%] lg:pt-[22%] xl:pt-[20%]">
+          <div ref={mainBannerImage} className="relative z-10 flex justify-end w-full lg:justify-center items-end h-full pt-[4%] xs:pt-[8%] lg:pt-[22%] xl:pt-[20%]">
             <img
               src="/adeel-image.png"
               alt="Dr. Muhammad Adeel Khaleel"
-              className="h-[500px] sm:h-[550px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
+              className="h-[500px] 3xs:h-[550px] sm:h-[600px] md:h-[700px] lg:h-[550px] xl:h-[650px] 2xl:h-[750px] object-contain object-bottom mix-blend-screen"
             />
           </div>
 

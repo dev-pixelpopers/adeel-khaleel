@@ -318,7 +318,7 @@ export default function Services() {
                     {servicesData.map((item, index) => (
                       <div key={index} className="w-full h-full shrink-0">
                         <span
-                          className="text-[100px] sm:text-[120px] md:text-[140px] lg:text-[120px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
+                          className="text-[75px] 2xs:text-[90px] xs:text-[100px] sm:text-[120px] md:text-[140px] lg:text-[120px] xl:text-[200px] font-Adorage text-[#54545420] leading-none shrink-0 w-full lg:pr-[100px] pr-5"
                         >
                           {item.id}
                         </span>
@@ -328,11 +328,11 @@ export default function Services() {
                 </div>
 
                 {/* Titles vertical track */}
-                <div className="overflow-hidden h-[120px] sm:h-[150px] md:h-[170px] lg:h-[190px] xl:h-[210px] w-full">
+                <div className="overflow-hidden h-[100px] xs:h-[120px] sm:h-[150px] md:h-[170px] lg:h-[190px] xl:h-[210px] w-full">
                   <div ref={titlesWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <h3 className="text-[30px] sm:text-[38px] md:text-[44px] lg:text-[40px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
+                        <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[38px] md:text-[44px] lg:text-[40px] xl:text-[60px] font-Adorage uppercase text-[#545454] leading-tight" style={{
                           whiteSpace: "pre-line"
                         }}>
                           {item.title}
@@ -343,11 +343,11 @@ export default function Services() {
                 </div>
 
                 {/* Descriptions vertical track */}
-                <div className="overflow-hidden h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] w-full">
+                <div className="overflow-hidden h-[70px] xs:h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] w-full">
                   <div ref={descriptionsWrapperRef} className="flex flex-col w-full h-full">
                     {servicesData.map((item, index) => (
                       <div key={index} className="h-full shrink-0 flex items-center">
-                        <p className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[24px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
+                        <p className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[35px] text-[#545454] font-Matangi-Regular leading-relaxed pt-2" >
                           {item.description}
                         </p>
                       </div>

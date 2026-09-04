@@ -147,7 +147,7 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <div ref={outerContainerRef} className="relative w-full h-[400vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
+    <div ref={outerContainerRef} className="relative w-full 3xs:h-[250vh] xs:h-[400vh] sm:h-[200vh] md:h-[300vh] lg:h-[650vh]">
       <section
         ref={sectionRef}
         className="sticky top-0 w-full h-dvh bg-white py-20 overflow-hidden select-none"
@@ -161,11 +161,11 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Dynamically Positioned Testimonial Cards Stream */}
-          <div ref={cardsTrackRef} className=" absolute inset-0 z-10 max-[1280px]:flex flex-col gap-y-10 justify-center items-center max-[1280px]:max-h-[650vh]" >
+          <div ref={cardsTrackRef} className=" absolute inset-0 z-10 max-[1280px]:flex flex-col gap-y-10 justify-center items-center max-[1280px]:h-max" >
             {testimonials.map((item, index) => (
               <div
                 key={item.id}
-                className="xl:absolute h-[270px] w-[320px] md:w-[500px] md:h-[380px] lg:h-[350px] xl:w-[320px] xl:h-[270px]  flex flex-col justify-between p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
+                className="xl:absolute h-[270px] w-[300px] 2xs:h-[280px] 2xs:w-[340px] md:w-[500px] md:h-[380px] lg:h-[350px] xl:w-[320px] xl:h-[270px]  flex flex-col justify-between p-6 rounded-2xl shadow-sm border border-[#EBE3C8]"
                 style={{
                   ...cardStyles[index],
                   background:

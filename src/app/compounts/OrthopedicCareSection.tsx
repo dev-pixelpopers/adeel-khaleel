@@ -89,15 +89,15 @@ export default function OrthopedicCareSection() {
 
             <div className="w-full text-center mb-30 sm:mb-55 flex flex-col items-center justify-center">
                 <div ref={headingRef} className="flex flex-col items-center justify-center text-[#545454] font-Adorage uppercase tracking-tight">
-                    <h2 className="text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
+                    <h2 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[0.95]">
                         ORTHOPEDIC CARE FOR
                     </h2>
-                    <h3 className="text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal leading-[1] mt-2">
+                    <h3 className="text-2xl 2xs:text-[28px] xs:text-[32px] sm:text-[45px] md:text-[60px] lg:text-[82px] font-normal xs:leading-[1] mt-2">
                         NECK AND SPINE CONDITIONS
                     </h3>
                 </div>
 
-                <p ref={textRef} className="max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] mt-8 md:mt-7 text-[18px] sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
+                <p ref={textRef} className="max-w-[280px] 2xs:max-w-[320px] xs:max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] mt-8 md:mt-7 text-sm 2xs:text-base xs:text-lg sm:text-[20px] md:text-[25px] text-[#555555] font-Matangi-Bold font-normal leading-relaxed md:leading-[45px]">
                     At Mohammed Khaleel, MD, we specialize in comprehensive care for a range of conditions affecting the neck and spine. Our expert team is dedicated to providing effective orthopedic treatments tailored to your needs. Explore our services below.
                 </p>
             </div>
@@ -111,33 +111,33 @@ export default function OrthopedicCareSection() {
                         <div
                             key={card.id}
                             onClick={() => setActiveId(isOpen ? null : card.id)}
-                            className={`relative cursor-pointer overflow-hidden h-[50vh] lg:h-auto lg:transition-all lg:duration-900 ease-in-out flex flex-col justify-end  ${isOpen
-                                ? "lg:w-[680px] w-full"
-                                : "lg:w-[260px] w-full lg:hover:opacity-95"
+                            className={`relative cursor-pointer overflow-hidden h-full transition-all duration-500 lg:duration-900 ease-in-out flex flex-col justify-end rounded-lg lg:rounded-none  ${isOpen
+                                ? "3xs:h-[42vh] 2xs:h-[50vh] lg:h-full lg:w-[680px] w-full "
+                                : "3xs:h-[12vh] 2xs:h-[18vh] lg:h-full lg:w-[260px] w-full lg:hover:opacity-95"
                                 }`}
                         >
                             <img
                                 src={card.image}
                                 alt={card.title}
-                                className="absolute inset-0 w-full h-full object-cover object-left"
+                                className="absolute inset-0 w-full h-full bg-amber-50 object-cover lg:object-left  rounded-lg lg:rounded-none"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/0 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 lg:bg-gradient-to-r from-white/95 via-white/0 to-transparent pointer-events-none" />
                             <div
-                                className={`relative z-10 text-left lg:transition-all lg:duration-900 ease-in-out pt-[30px] max-h-[200px] md:pl-[32px] px-[10px]`}
+                                className={`relative z-10 text-left 3xs:transition-all 3xs:duration-400  ${isOpen ? "3xs:delay-600 3xs:translate-y-[0%] 3xs:pt-[20px] lg:pt-0" : "3xs:translate-y-[75%] 2xs:translate-y-[70%] lg:translate-y-[0%] 3xs:pt-[4px] lg:pt-0"} lg:transition-all lg:duration-900 ease-in-out lg:pt-[30px] max-h-[200px] md:pl-[32px] lg:px-[10px]`}
                             >
-                                <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md lg:duration-900 ${isOpen ? "lg:delay-600 lg:translate-y-[0%]" : "lg:translate-y-[100%]"}`}>
+                                <div className={`absolute z-0 top-0 left-0 w-full h-full bg-white/50 backdrop-blur-md duration-900 ${isOpen ? "lg:delay-600 lg:translate-y-[0%]" : "lg:translate-y-[100%]"}`}>
 
                                 </div>
                                 <h4
-                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap lg:transition-transform lg:duration-900 lg:ease-in origin-left ml-[20px] sm:ml-[32px] ${isOpen
-                                        ? "text-[28px] md:text-[57px] leading-tight lg:rotate-0"
-                                        : "text-[28px] md:text-[57px] lg:-rotate-90"
+                                    className={`relative font-Adorage uppercase text-[#8E6C36] whitespace-nowrap lg:transition-transform lg:duration-900 lg:ease-in origin-left pb-2 lg:pb-0 ml-[10px] xs:ml-[20px] sm:ml-[32px] ${isOpen
+                                        ? "text-xl 2xs:text-2xl xs:text-[28px] md:text-[57px] leading-tight lg:rotate-0"
+                                        : "text-xl 2xs:text-2xl xs:text-[28px] md:text-[57px] lg:-rotate-90"
                                         }`}
                                 >
                                     {card.title}
                                 </h4>
-                                <div className={`relative overflow-hidden w-full pl-[20px] sm:pl-[32px]  mb-[30px] ${isOpen ? "lg:duration-900 lg:delay-900 lg:opacity-100" : "lg:duration-300 lg:opacity-0"}`} >
-                                    <p className="text-gray-600 font-Matangi-Regular text-base md:text-[19px] leading-relaxed max-w-2xl">
+                                <div className={`relative overflow-hidden w-full 3xs:pl-[10px] xs:pl-[20px] sm:pl-[32px] mb-[10px] lg:mb-[30px] ${isOpen ? "lg:duration-900 lg:delay-900 lg:opacity-100" : "lg:duration-300 lg:opacity-0"}`} >
+                                    <p className="text-gray-600 font-Matangi-Regular text-sm xs:text-base md:text-[19px] leading-relaxed max-w-2xl">
                                         {card.description}
                                     </p>
                                 </div>
